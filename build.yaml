@@ -60,5 +60,6 @@ include:
     # Reset shields
   - board: nice_nano_v2
     shield: settings_reset
+    cmake-args: -DCONFIG_BUILD_OUTPUT_HEX=y -DCONFIG_BUILD_OUTPUT_UF2=n
   - board: seeeduino_xiao_ble
     shield: settings_reset
