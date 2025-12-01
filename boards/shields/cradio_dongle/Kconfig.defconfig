@@ -1,5 +1,8 @@
 if SHIELD_CRADIO_DONGLE
 
+config CONFIG_BUILD_OUTPUT_HEX
+    default y
+
 config ZMK_KEYBOARD_NAME
     default "Sweep"
 
