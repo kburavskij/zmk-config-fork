@@ -15,6 +15,11 @@ config BUILD_OUTPUT_HEX
 config BUILD_OUTPUT_UF2
     default n
 
+config FLASH_LOAD_OFFSET
+    default 0x1000
+
+config BOARD_HAS_NRF5_BOOTLOADER
+    default y
 
 endif
 
@@ -31,5 +36,11 @@ config BUILD_OUTPUT_HEX
 
 config BUILD_OUTPUT_UF2
     default n
+
+config FLASH_LOAD_OFFSET
+    default 0x1000
+
+config BOARD_HAS_NRF5_BOOTLOADER
+    default y
 
 endif
