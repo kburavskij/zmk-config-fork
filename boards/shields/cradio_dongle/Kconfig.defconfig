@@ -33,3 +33,10 @@ config BUILD_OUTPUT_UF2
     default n
 
 endif
+
+if SHIELD_DONGLE_SETTINGS_RESET
+
+config ZMK_KEYBOARD_NAME
+	default "SETTINGS RESET"
+
+endif
