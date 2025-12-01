@@ -131,6 +131,15 @@
 
     };
 
+        macros {
+        main_macro: main_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(M) &kp U &kp S &kp T &kp A &kp N &kp G &kp A &kp T &kp C &kp O &kp V &kp E &kp N &kp T &kp R &kp Y &kp DOT &kp N1 &kp N9 &kp N6 &kp N5>;
+            label = "MAIN_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -198,7 +207,7 @@
             display-name = "MSE";
             bindings = <LAYER_FROM36( \
 // ╭────────────────────┬───────────────┬────────────────────┬───────────────┬────────────────────╮   ╭─────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────╮
-     &none,               &mkp MB4,         &mkp MCLK,          &mkp MB5,      &none,                   &none,                &msc SCRL_UP,       &mmv MOVE_UP,       &none,                 &none,         \
+     &none,               &mkp MB4,         &mkp MCLK,          &mkp MB5,      &none,                   &main_macro,          &msc SCRL_UP,       &mmv MOVE_UP,       &none,                 &none,         \
 // ├────────────────────┼───────────────┼────────────────────┼───────────────┼────────────────────┤   ├─────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┤
      &msc SCRL_LEFT,      &mkp LCLK,        &msc SCRL_DOWN,     &mkp RCLK,     &msc SCRL_RIGHT,         &none,                &mmv MOVE_LEFT,     &mmv MOVE_DOWN,    &mmv MOVE_RIGHT,        &none,         \
 // ├────────────────────┼───────────────┼────────────────────┼───────────────┼────────────────────┤   ├─────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┤
