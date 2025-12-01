@@ -17,7 +17,14 @@
 &caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE SPACE MINUS DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>; };
 
 / {
-    macros {};
+    macros {
+        main_macro: main_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(M) &kp U &kp S &kp T &kp A &kp N &kp G &kp A &kp T &kp C &kp O &kp V &kp E &kp N &kp T &kp R &kp Y &kp DOT &kp N1 &kp N9 &kp N6 &kp N5>;
+            label = "MAIN_MACRO";
+        };
+    };
 
    cond_layers {
         compatible = "zmk,conditional-layers";
@@ -129,15 +136,6 @@
             bindings = <&bootloader>, <&sys_reset>; // Press-> sys_reset, hold-> bootloader
         };
 
-    };
-
-        macros {
-        main_macro: main_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(M) &kp U &kp S &kp T &kp A &kp N &kp G &kp A &kp T &kp C &kp O &kp V &kp E &kp N &kp T &kp R &kp Y &kp DOT &kp N1 &kp N9 &kp N6 &kp N5>;
-            label = "MAIN_MACRO";
-        };
     };
 
     keymap {
