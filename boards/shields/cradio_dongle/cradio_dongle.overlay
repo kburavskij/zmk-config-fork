@@ -5,9 +5,6 @@
 };
 
 /* Disable keyboard scanning and matrix (not used on dongle) */
-&kscan0 {
-    status = "disabled";
-};
 
 &matrix_transform {
     status = "disabled";
