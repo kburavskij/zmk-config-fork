@@ -127,4 +127,121 @@
             layers = <FNC>;
         };
     };
+        delete {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp DELETE>;
+            key-positions = <LM2 LM1>;
+            layers = <BASE>;
+        };
+
+        copy {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp LG(C)>;
+            key-positions = <LB3 LB2>;
+            layers = <BASE>;
+        };
+
+        paste {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp LG(V)>;
+            key-positions = <LB2 LB1>;
+            layers = <BASE>;
+        };
+
+        scroll_up {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <180>;
+            slow-release;
+            bindings = <&msc SCRL_UP>;
+            key-positions = <RT1 RT2 RT3>;
+            layers = <BASE MSE>;
+        };
+
+        escape {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <0>;
+            bindings = <&kp ESC>;
+            key-positions = <RM1 RM2>;
+            layers = <BASE>;
+        };
+
+        enter {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <220>;
+            slow-release;
+            bindings = <&kp ENTER>;
+            key-positions = <LM4 LM3 LM2>;
+            layers = <BASE>;
+        };
+
+        caps_word {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <0>;
+            bindings = <&caps_word>;
+            key-positions = <LM2 LM1 RM1 RM2>;
+            layers = <BASE>;
+        };
+
+        cut {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp LG(X)>;
+            key-positions = <LB3 LB1>;
+            layers = <BASE>;
+        };
+
+        to_mse_layer {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <180>;
+            slow-release;
+            bindings = <&tog MSE>;
+            key-positions = <RM2 RM3>;
+            layers = <BASE>;
+        };
+
+        scroll_down {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <180>;
+            slow-release;
+            bindings = <&msc SCRL_DOWN>;
+            key-positions = <RB1 RB2 RB3>;
+            layers = <BASE MSE>;
+        };
+
+        escape_left {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <200>;
+            slow-release;
+            bindings = <&kp ESC>;
+            key-positions = <LT4 LT3>;
+            layers = <BASE>;
+        };
+
+        softoff {
+            timeout-ms = <1000>;
+            require-prior-idle-ms = <200>;
+            bindings = <&soft_off>;
+            key-positions = <LM0 RM0>;
+            layers = <FNC>;
+        };
+
+        indbat {
+            timeout-ms = <100>;
+            require-prior-idle-ms = <200>;
+            bindings = <&ind_bat>;
+            key-positions = <LT2 RT2>;
+            layers = <FNC>;
+        };
+
+        indcon {
+            timeout-ms = <100>;
+            require-prior-idle-ms = <200>;
+            bindings = <&ind_con>;
+            key-positions = <LT1 RT1>;
+            layers = <FNC>;
+        };
+    };
 };
