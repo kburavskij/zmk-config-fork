@@ -48,3 +48,27 @@
         , <&gpio0 1 GPIO_ACTIVE_HIGH>
     ;
 };
+
+
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+};
+
+/ {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio";  /* needed placeholder node */
+        status = "disabled";
+    };
+};
+
+/* Disable any inherited matrix */
+&kscan0 {
+    status = "disabled";
+};
+
+&matrix_transform {
+    status = "disabled";
+};
