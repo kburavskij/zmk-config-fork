@@ -51,6 +51,10 @@
 
 
 
+
+
+
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -71,4 +75,38 @@
 
 &matrix_transform {
     status = "disabled";
+};
+
+
+
+
+
+
+
+
+
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "../../../config/includes/base.dtsi"
+#include "../../../config/hardware_layouts/34-keys.h"
+&physical_layout0 { transform = <&default_transform>; };
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows    = <0>;
+        events  = <0>;
+    };
+    default_transform: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
+        // keys = <...> if doing full layout (optional if only for ZMK Studio)
+    };
 };
