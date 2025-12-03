@@ -1,16 +1,10 @@
 / {
-    chosen {
-        zmk,usb = &usbd;
+chosen {
+    zmk,usb = &zephyr_usb;
     };
 };
 
-/* Disable keyboard scanning and matrix (not used on dongle) */
 
-&matrix_transform {
-    status = "disabled";
-};
-
-/* Disable ANY inherited kscan node if it exists */
-&kscan {
-    status = "disabled";
+&zephyr_usb {
+    status = "okay";
 };
