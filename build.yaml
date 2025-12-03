@@ -3,7 +3,7 @@ include:
   - board: nice_nano_v2
     shield: cradio_left
     snippet: zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     artifact-name: sweep_left_peripheral
   - board: nice_nano_v2
     shield: cradio_right

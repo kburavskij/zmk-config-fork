@@ -1,10 +1,22 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "../../../config/includes/base.dtsi"
+&physical_layout0 { transform = <&default_transform>; };
+
 / {
-chosen {
-    zmk,usb = &zephyr_usb;
+    chosen {
+        zmk,kscan = &mock_kscan;
     };
-};
 
-
-&zephyr_usb {
-    status = "okay";
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows    = <0>;
+        events  = <0>;
+    };
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
+        // keys = <...> if doing full layout (optional if only for ZMK Studio)
+    };
 };

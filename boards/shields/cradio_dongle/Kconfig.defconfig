@@ -39,4 +39,15 @@ if SHIELD_DONGLE_SETTINGS_RESET
 config ZMK_KEYBOARD_NAME
 	default "SETTINGS RESET"
 
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+config ZMK_SPLIT
+    default y
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 1  
+config BT_MAX_CONN
+    default 6  
+config BT_MAX_PAIRED
+    default 6  
+
 endif
