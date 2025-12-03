@@ -156,32 +156,24 @@ combos:
 - p: [6, 7, 8]
   k: Scroll ↑
   l: [BASE, MSE]
-  a: top
-  o: 0.4
 - p: [16, 17]
   k: Esc
   l: [BASE]
 - p: [10, 11, 12]
   k: ⏎
   l: [BASE]
-  draw_separate: true
 - p: [12, 13, 16, 17]
   k: Caps Word
   l: [BASE]
-  draw_separate: true
 - p: [21, 23]
   k: Cut
   l: [BASE]
-  a: bottom
-  o: 0.2
 - p: [17, 18]
   k: {t: MSE, h: toggle}
   l: [BASE]
 - p: [26, 27, 28]
   k: Scroll ↓
   l: [BASE, MSE]
-  a: bottom
-  o: 0.2
 - p: [0, 1]
   k: Esc
   l: [BASE]
@@ -191,10 +183,6 @@ combos:
 - p: [2, 7]
   k: Show Batt
   l: [FNC]
-  a: top
-  o: 1.0
 - p: [3, 6]
   k: Show Conn
   l: [FNC]
-  a: top
-  o: 0.5
