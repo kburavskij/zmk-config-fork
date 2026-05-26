@@ -532,6 +532,14 @@ use.phosphor\:regular\/control {
 <rect rx="6" ry="6" x="46" y="54" width="28" height="28" class="combo"/>
 <text x="60" y="68" class="combo tap">Esc</text>
 </g>
+<g class="combo combopos-11">
+<path d="M360,68 l-310,18" class="combo"/>
+<path d="M360,68 l-250,-18" class="combo"/>
+<path d="M360,68 l250,-18" class="combo"/>
+<path d="M360,68 l310,18" class="combo"/>
+<rect rx="6" ry="6" x="346" y="54" width="28" height="28" class="combo"/>
+<text x="360" y="68" class="combo tap"><tspan style="font-size: 64%">&amp;main_macro</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 363)" class="layer-SYM">
@@ -1039,7 +1047,6 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(450, 55)" class="key keypos-5">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;main_macro</tspan></text>
 </g>
 <g transform="translate(510, 47)" class="key keypos-6">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
