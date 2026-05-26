@@ -481,24 +481,16 @@ use.phosphor\:regular\/control {
 <text x="180" y="159" class="combo tap">Paste</text>
 </g>
 <g class="combo combopos-3">
-<path d="M570,42 l-40,3" class="combo"/>
-<path d="M570,42 l40,5" class="combo"/>
-<rect rx="6" ry="6" x="556" y="28" width="28" height="28" class="combo"/>
-<text x="570" y="42" class="combo tap">
-<tspan x="570" dy="-0.6em">Scroll</tspan><tspan x="570" dy="1.2em">↑</tspan>
-</text>
-</g>
-<g class="combo combopos-4">
 <rect rx="6" ry="6" x="526" y="85" width="28" height="28" class="combo"/>
 <text x="540" y="99" class="combo tap">Esc</text>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-4">
 <path d="M90,115 l-42,22" class="combo"/>
 <path d="M90,115 l42,-18" class="combo"/>
 <rect rx="6" ry="6" x="76" y="101" width="28" height="28" class="combo"/>
 <text x="90" y="115" class="combo tap">⏎</text>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-5">
 <path d="M360,99 l-190,-8" class="combo"/>
 <path d="M360,99 l-130,8" class="combo"/>
 <path d="M360,99 l130,8" class="combo"/>
@@ -508,31 +500,17 @@ use.phosphor\:regular\/control {
 <tspan x="360" dy="-0.6em">Caps</tspan><tspan x="360" dy="1.2em">Word</tspan>
 </text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-6">
 <path d="M150,168 l-40,1" class="combo"/>
 <path d="M150,168 l40,-1" class="combo"/>
 <rect rx="6" ry="6" x="136" y="154" width="28" height="28" class="combo"/>
 <text x="150" y="168" class="combo tap">Cut</text>
 </g>
-<g class="combo combopos-8">
-<rect rx="6" ry="6" x="586" y="86" width="28" height="28" class="combo"/>
-<a href="#MSE">
-<text x="600" y="100" class="combo tap layer-activator">MSE</text>
-</a><text x="600" y="112" class="combo hold">toggle</text>
-</g>
-<g class="combo combopos-9">
-<path d="M570,162 l-40,3" class="combo"/>
-<path d="M570,162 l40,5" class="combo"/>
-<rect rx="6" ry="6" x="556" y="148" width="28" height="28" class="combo"/>
-<text x="570" y="162" class="combo tap">
-<tspan x="570" dy="-0.6em">Scroll</tspan><tspan x="570" dy="1.2em">↓</tspan>
-</text>
-</g>
-<g class="combo combopos-10">
+<g class="combo combopos-7">
 <rect rx="6" ry="6" x="46" y="54" width="28" height="28" class="combo"/>
 <text x="60" y="68" class="combo tap">Esc</text>
 </g>
-<g class="combo combopos-11">
+<g class="combo combopos-8">
 <path d="M360,68 l-310,18" class="combo"/>
 <path d="M360,68 l-250,-18" class="combo"/>
 <path d="M360,68 l250,-18" class="combo"/>
@@ -1164,22 +1142,6 @@ use.phosphor\:regular\/control {
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">
 <tspan x="0" dy="-0.6em">Toggle</tspan><tspan x="0" dy="1.2em">MSE</tspan>
-</text>
-</g>
-<g class="combo combopos-0">
-<path d="M570,42 l-40,3" class="combo"/>
-<path d="M570,42 l40,5" class="combo"/>
-<rect rx="6" ry="6" x="556" y="28" width="28" height="28" class="combo"/>
-<text x="570" y="42" class="combo tap">
-<tspan x="570" dy="-0.6em">Scroll</tspan><tspan x="570" dy="1.2em">↑</tspan>
-</text>
-</g>
-<g class="combo combopos-1">
-<path d="M570,162 l-40,3" class="combo"/>
-<path d="M570,162 l40,5" class="combo"/>
-<rect rx="6" ry="6" x="556" y="148" width="28" height="28" class="combo"/>
-<text x="570" y="162" class="combo tap">
-<tspan x="570" dy="-0.6em">Scroll</tspan><tspan x="570" dy="1.2em">↓</tspan>
 </text>
 </g>
 </g>
