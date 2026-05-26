@@ -14,18 +14,18 @@ include:
     shield: cradio_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: sweep_right
-  - board: nrf52840dongle_nrf52840//zmk
-    shield: cradio_dongle
-    snippet: studio-rpc-usb-uart
-    # snippet: zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: sweep_dongle
+  # - board: nrf52840dongle
+  #   shield: cradio_dongle
+  #   snippet: studio-rpc-usb-uart
+  #   # snippet: zmk-usb-logging
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #   artifact-name: sweep_dongle
 
     # Reset shields
-  - board: nrf52840dongle_nrf52840//zmk
-    shield: settings_reset
-    cmake-args: -DCONFIG_BUILD_OUTPUT_HEX=y -DCONFIG_BUILD_OUTPUT_UF2=n
-    artifact-name: settings_reset_sweep_dongle
+  # - board: nrf52840dongle
+  #   shield: settings_reset
+  #   cmake-args: -DCONFIG_BUILD_OUTPUT_HEX=y -DCONFIG_BUILD_OUTPUT_UF2=n
+  #   artifact-name: settings_reset_sweep_dongle
   - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset
