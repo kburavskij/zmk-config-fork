@@ -180,3 +180,24 @@ combos:
 - p: [0, 1, 8, 9]
   k: '&main_macro'
   l: [BASE]
+- p: [20, 21]
+  k: $$phosphor:regular/control$$+Z
+  l: [BASE]
+- p: [20, 22]
+  k: $$phosphor:regular/control$$+$$phosphor:regular/arrow-fat-up$$+Z
+  l: [BASE]
+- p: [10, 11]
+  k: $$phosphor:regular/control$$+A
+  l: [BASE]
+- p: [11, 12]
+  k: $$phosphor:regular/control$$+S
+  l: [BASE]
+- p: [13, 12]
+  k: $$phosphor:regular/control$$+F
+  l: [BASE]
+- p: [3, 2]
+  k: ↹
+  l: [BASE]
+- p: [23, 22]
+  k: '`'
+  l: [BASE]
