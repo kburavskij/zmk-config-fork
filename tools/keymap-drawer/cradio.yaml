@@ -140,7 +140,7 @@ layers:
   - ''
   - ''
   - {type: held}
-  MSE: ['', Back Click, Middle Click, Forward Click, '', '&main_macro', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
+  MSE: ['', Back Click, Middle Click, Forward Click, '', '', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
     Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', '', '', '', '', '', '', '', '', '', Toggle MSE, '$$phosphor:regular/mouse-left-click$$', '$$phosphor:regular/mouse-right-click$$',
     Toggle MSE]
 combos:
@@ -153,9 +153,6 @@ combos:
 - p: [22, 23]
   k: Paste
   l: [BASE]
-- p: [6, 7, 8]
-  k: Scroll ↑
-  l: [BASE, MSE]
 - p: [16, 17]
   k: Esc
   l: [BASE]
@@ -168,12 +165,6 @@ combos:
 - p: [21, 23]
   k: Cut
   l: [BASE]
-- p: [17, 18]
-  k: {t: MSE, h: toggle}
-  l: [BASE]
-- p: [26, 27, 28]
-  k: Scroll ↓
-  l: [BASE, MSE]
 - p: [0, 1]
   k: Esc
   l: [BASE]
@@ -186,3 +177,6 @@ combos:
 - p: [3, 6]
   k: Show Conn
   l: [FNC]
+- p: [0, 1, 8, 9]
+  k: '&main_macro'
+  l: [BASE]
