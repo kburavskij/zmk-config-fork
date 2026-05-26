@@ -89,6 +89,27 @@
             bindings = <&kp LS(M) &kp U &kp S &kp T &kp A &kp N &kp G &kp A &kp T &kp C &kp O &kp V &kp E &kp N &kp T &kp R &kp Y &kp DOT &kp N1 &kp N9 &kp N6 &kp N5>;
             label = "MAIN_MACRO";
         };
+
+        email_macro: email_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp I &kp R &kp I &kp L &kp DOT &kp B &kp U &kp R &kp A &kp V &kp S &kp K &kp I &kp J &kp AT &kp I &kp B &kp M &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL_MACRO";
+        };
+
+        pass1_macro: pass1_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp K &kp M &kp F &kp A &kp U &kp T &kp O>;
+            label = "PASS1_MACRO";
+        };
+
+        pass2_macro: pass2_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp N2 &kp N3 &kp N5 &kp N8 &kp X>;
+            label = "PASS2_MACRO";
+        };
     };
 
    cond_layers {
@@ -366,10 +387,10 @@
         };
 
         tab_key {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <120>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
             bindings = <&kp TAB>;
-            key-positions = <LT1 LT2>;
+            key-positions = <LT2 LT3>;
             layers = <BASE>;
         };
 
@@ -379,6 +400,38 @@
             bindings = <&kp GRAVE>;
             key-positions = <LB1 LB2>;
             layers = <BASE>;
+        };
+
+        email_combo {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            bindings = <&email_macro>;
+            key-positions = <RT4 RB4>;
+            layers = <BASE>;
+        };
+
+        pass1_combo {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            bindings = <&pass1_macro>;
+            key-positions = <RT4 RM4>;
+            layers = <BASE>;
+        };
+
+        pass2_combo {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            bindings = <&pass2_macro>;
+            key-positions = <RM4 RB4>;
+            layers = <BASE>;
+        };
+
+        f13_combo {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp F13>;
+            key-positions = <LM0 RM0>;
+            layers = <FNC>;
         };
     };
 
