@@ -224,14 +224,14 @@
             layers = <BASE>;
         };
 
-        scroll_up {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <180>;
-            slow-release;
-            bindings = <&msc SCRL_UP>;
-            key-positions = <RT1 RT2 RT3>;
-            layers = <BASE MSE>;
-        };
+        // scroll_up {
+        //     timeout-ms = <50>;
+        //     require-prior-idle-ms = <180>;
+        //     slow-release;
+        //     bindings = <&msc SCRL_UP>;
+        //     key-positions = <RT1 RT2 RT3>;
+        //     layers = <BASE MSE>;
+        // };
 
         escape {
             timeout-ms = <40>;
@@ -266,23 +266,23 @@
             layers = <BASE>;
         };
 
-        to_mse_layer {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <180>;
-            slow-release;
-            bindings = <&tog MSE>;
-            key-positions = <RM2 RM3>;
-            layers = <BASE>;
-        };
+        // to_mse_layer {
+        //     timeout-ms = <40>;
+        //     require-prior-idle-ms = <180>;
+        //     slow-release;
+        //     bindings = <&tog MSE>;
+        //     key-positions = <RM2 RM3>;
+        //     layers = <BASE>;
+        // };
 
-        scroll_down {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <180>;
-            slow-release;
-            bindings = <&msc SCRL_DOWN>;
-            key-positions = <RB1 RB2 RB3>;
-            layers = <BASE MSE>;
-        };
+        // scroll_down {
+        //     timeout-ms = <40>;
+        //     require-prior-idle-ms = <180>;
+        //     slow-release;
+        //     bindings = <&msc SCRL_DOWN>;
+        //     key-positions = <RB1 RB2 RB3>;
+        //     layers = <BASE MSE>;
+        // };
 
         escape_left {
             timeout-ms = <40>;
