@@ -140,7 +140,7 @@ layers:
   - Toggle SYS
   - ''
   - {type: held}
-  MSE: ['', Back Click, Middle Click, Forward Click, '', '', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
+  MSE: ['', Back Click, Middle Click, Forward Click, '', '&main_macro', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
     Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', Drag On, Drag Off, '', '', '', '', '', '', '', MSF, '$$phosphor:regular/mouse-left-click$$', '$$phosphor:regular/mouse-right-click$$',
     Toggle MSE]
   MSF:
@@ -212,10 +212,7 @@ layers:
   - ''
   - Toggle SYS
   - ''
-  - {type: held}
-  MSE: ['', Back Click, Middle Click, Forward Click, '', '&main_macro', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
-    Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', '', '', '', '', '', '', '', '', '', Toggle MSE, '$$phosphor:regular/mouse-left-click$$', '$$phosphor:regular/mouse-right-click$$',
-    Toggle MSE]
+  - Base
 combos:
 - p: [12, 13]
   k: Delete
@@ -242,7 +239,7 @@ combos:
   k: Cut
   l: [BASE]
 - p: [17, 18]
-  k: {t: MSE, h: toggle}
+  k: Toggle MSE
   l: [BASE]
 - p: [26, 27, 28]
   k: Scroll ↓
