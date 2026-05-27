@@ -113,55 +113,6 @@
         };
     };
 
-    behaviors {
-        ok_copy: os_key_copy {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>, <&kp LG(C)>, <&kp LC(C)>;
-        };
-
-        ok_paste: os_key_paste {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>, <&kp LG(V)>, <&kp LC(V)>;
-        };
-
-        ok_cut: os_key_cut {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(X)>, <&kp LG(X)>, <&kp LC(X)>;
-        };
-
-        ok_undo: os_key_undo {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(Z)>, <&kp LG(Z)>, <&kp LC(Z)>;
-        };
-
-        ok_redo: os_key_redo {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(Z))>, <&kp LG(LS(Z))>, <&kp LC(LS(Z))>;
-        };
-
-        ok_select_all: os_key_select_all {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(A)>, <&kp LG(A)>, <&kp LC(A)>;
-        };
-
-        ok_save: os_key_save {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(S)>, <&kp LG(S)>, <&kp LC(S)>;
-        };
-
-        ok_find: os_key_find {
-            compatible = "zmk,behavior-os-key";
-            #binding-cells = <0>;
-            bindings = <&kp LC(F)>, <&kp LG(F)>, <&kp LC(F)>;
-        };
-
    cond_layers {
         compatible = "zmk,conditional-layers";
         func_tristate {
