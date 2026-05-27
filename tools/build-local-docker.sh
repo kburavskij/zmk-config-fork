@@ -7,7 +7,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 # shellcheck source=tools/lib/docker-common.sh
 source "${REPO_ROOT}/tools/lib/docker-common.sh"
 
-IMAGE="zmkfirmware/zmk-build-arm:stable"
+IMAGE="docker.io/zmkfirmware/zmk-build-arm:stable"
 WORKSPACE_VOLUME="zmk-workspace-cache"
 OUT_DIR="${REPO_ROOT}/build/local"
 CONTAINER_SCRIPT="/zmk-config/tools/docker/build-profile-in-container.sh"
@@ -42,10 +42,10 @@ fi
 mkdir -p "${OUT_DIR}"
 ensure_docker
 
-docker run --rm \
-	-v "${REPO_ROOT}:/zmk-config:ro" \
-	-v "${WORKSPACE_VOLUME}:/work" \
-	-v "${OUT_DIR}:/out" \
+"${CONTAINER_CMD}" run --rm \
+	-v "${REPO_ROOT}:/zmk-config:ro,Z" \
+	-v "${WORKSPACE_VOLUME}:/work:Z" \
+	-v "${OUT_DIR}:/out:Z" \
 	"${IMAGE}" \
 	/bin/bash "${CONTAINER_SCRIPT}" "${keyboard}" "${use_dongle}"
 
