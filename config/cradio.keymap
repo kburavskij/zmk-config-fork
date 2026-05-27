@@ -12,6 +12,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/rgbled_widget.dtsi>
+#include "includes/oskey.dtsi"
 
 #define LT0  4
 #define LT1  3
@@ -111,6 +112,55 @@
             label = "PASS2_MACRO";
         };
     };
+
+    behaviors {
+        ok_copy: os_key_copy {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>, <&kp LG(C)>, <&kp LC(C)>;
+        };
+
+        ok_paste: os_key_paste {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>, <&kp LG(V)>, <&kp LC(V)>;
+        };
+
+        ok_cut: os_key_cut {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(X)>, <&kp LG(X)>, <&kp LC(X)>;
+        };
+
+        ok_undo: os_key_undo {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(Z)>, <&kp LG(Z)>, <&kp LC(Z)>;
+        };
+
+        ok_redo: os_key_redo {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(Z))>, <&kp LG(LS(Z))>, <&kp LC(LS(Z))>;
+        };
+
+        ok_select_all: os_key_select_all {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A)>, <&kp LG(A)>, <&kp LC(A)>;
+        };
+
+        ok_save: os_key_save {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S)>, <&kp LG(S)>, <&kp LC(S)>;
+        };
+
+        ok_find: os_key_find {
+            compatible = "zmk,behavior-os-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(F)>, <&kp LG(F)>, <&kp LC(F)>;
+        };
 
    cond_layers {
         compatible = "zmk,conditional-layers";
@@ -232,7 +282,7 @@
         copy {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LG(C)>;
+            bindings = <&ok_copy>;
             key-positions = <LB3 LB2>;
             layers = <BASE>;
         };
@@ -240,7 +290,7 @@
         paste {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LG(V)>;
+            bindings = <&ok_paste>;
             key-positions = <LB2 LB1>;
             layers = <BASE>;
         };
@@ -282,7 +332,7 @@
         cut {
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LG(X)>;
+            bindings = <&ok_cut>;
             key-positions = <LB3 LB1>;
             layers = <BASE>;
         };
@@ -349,7 +399,7 @@
         undo {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LC(Z)>;
+            bindings = <&ok_undo>;
             key-positions = <LB4 LB3>;
             layers = <BASE>;
         };
@@ -357,7 +407,7 @@
         redo {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LC(LS(Z))>;
+            bindings = <&ok_redo>;
             key-positions = <LB4 LB2>;
             layers = <BASE>;
         };
@@ -365,7 +415,7 @@
         select_all {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LC(A)>;
+            bindings = <&ok_select_all>;
             key-positions = <LM4 LM3>;
             layers = <BASE>;
         };
@@ -373,7 +423,7 @@
         save {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LC(S)>;
+            bindings = <&ok_save>;
             key-positions = <LM3 LM2>;
             layers = <BASE>;
         };
@@ -381,7 +431,7 @@
         find {
             timeout-ms = <50>;
             require-prior-idle-ms = <120>;
-            bindings = <&kp LC(F)>;
+            bindings = <&ok_find>;
             key-positions = <LM1 LM2>;
             layers = <BASE>;
         };

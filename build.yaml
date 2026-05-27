@@ -1,18 +1,15 @@
 include:
   # Sweep
   - board: nice_nano//zmk
-  - board: nice_nano//zmk
     shield: cradio_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n # This is for dongle build
     artifact-name: sweep_left_peripheral
-  - board: nice_nano//zmk
   - board: nice_nano//zmk
     shield: cradio_left
     # snippet: zmk-usb-logging
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_STUDIO=y # This is for dongless build
     artifact-name: sweep_left_central
-  - board: nice_nano//zmk
   - board: nice_nano//zmk
     shield: cradio_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
