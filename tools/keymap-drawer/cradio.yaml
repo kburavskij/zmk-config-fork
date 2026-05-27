@@ -184,7 +184,7 @@ combos:
   k: $$phosphor:regular/control$$+Z
   l: [BASE]
 - p: [20, 22]
-  k: $$phosphor:regular/control$$+arrow-fat-up$$+Z
+  k: $$phosphor:regular/control$$+$$phosphor:regular/arrow-fat-up$$+Z
   l: [BASE]
 - p: [10, 11]
   k: $$phosphor:regular/control$$+A
