@@ -21,7 +21,7 @@ layers:
   - {t: K, h: '$$phosphor:regular/command$$'}
   - {t: L, h: '$$phosphor:regular/option$$'}
   - {t: ;, h: '$$phosphor:regular/control$$'}
-  - Z
+  - {t: Z, h: '$$mdi:flash$$'}
   - X
   - C
   - V
@@ -30,11 +30,11 @@ layers:
   - M
   - ','
   - .
-  - /
+  - {t: /, h: '$$mdi:flash$$'}
   - {t: '$$mdi:keyboard-space$$', h: SYM}
   - {t: ↹, h: '$$phosphor:regular/control$$'}
   - {t: ⏎, h: '$$phosphor:regular/arrow-fat-up$$'}
-  - {t: '$$phosphor:regular/backspace$$', h: NAV}
+  - {t: Bspc, h: NAV}
   SYM:
   - '!'
   - '@'
@@ -81,26 +81,26 @@ layers:
   - '8'
   - '9'
   - '0'
-  - {t: Print Scrn, h: '$$phosphor:regular/control$$'}
-  - {t: ▽, type: trans}
-  - {t: '$$mdi:skip-backward$$', h: '$$phosphor:regular/command$$'}
-  - {t: '$$mdi:play-pause$$', h: '$$phosphor:regular/arrow-fat-up$$'}
-  - $$mdi:skip-forward$$
+  - {t: StartLn, h: '$$phosphor:regular/control$$'}
+  - {t: Prev Word, h: '$$phosphor:regular/option$$'}
+  - {t: Del Word, h: '$$phosphor:regular/command$$'}
+  - {t: Next Word, h: '$$phosphor:regular/arrow-fat-up$$'}
+  - EndLn
   - ←
   - {t: ↓, h: '$$phosphor:regular/arrow-fat-up$$'}
   - {t: ↑, h: '$$phosphor:regular/command$$'}
   - {t: →, h: '$$phosphor:regular/option$$'}
-  - {t: '$$mdi:volume-high$$', h: '$$phosphor:regular/control$$'}
-  - $$mdi:volume-off$$
-  - {t: ▽, type: trans}
-  - APP
+  - {t: Del Line, h: '$$phosphor:regular/control$$'}
+  - Back
+  - Prev Tab
+  - Homerow
   - PgUp
   - Home
   - End
   - PgDwn
-  - ','
-  - .
-  - $$mdi:volume-medium$$
+  - Leader
+  - Next Tab
+  - Forward
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -126,8 +126,81 @@ layers:
   - $$phosphor:regular/command$$
   - $$phosphor:regular/option$$
   - $$phosphor:regular/control$$
+  - {t: '$$mdi:volume-medium$$', h: '$$mdi:volume-off$$'}
+  - $$mdi:skip-backward$$
+  - Toggle MSE
+  - Print Scrn
+  - Bright -
+  - Bright +
+  - ''
+  - $$mdi:play-pause$$
+  - $$mdi:skip-forward$$
+  - $$mdi:volume-high$$
+  - {type: held}
+  - Toggle SYS
+  - ''
+  - {type: held}
+  MSE: ['', Back Click, Middle Click, Forward Click, '', '', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
+    Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', Drag On, Drag Off, '', '', '', '', '', '', '', MSF, '$$phosphor:regular/mouse-left-click$$', '$$phosphor:regular/mouse-right-click$$',
+    Toggle MSE]
+  MSF:
+  - ''
+  - Back Click
+  - Middle Click
+  - Forward Click
+  - ''
+  - ''
+  - Scroll ↑↑
+  - Mouse ↑↑
+  - ''
+  - ''
+  - Scroll ←←
+  - $$phosphor:regular/mouse-left-click$$
+  - Scroll ↓↓
+  - $$phosphor:regular/mouse-right-click$$
+  - Scroll →→
+  - ''
+  - Mouse ←←
+  - Mouse ↓↓
+  - Mouse →→
+  - ''
+  - ''
+  - Drag On
+  - Drag Off
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - $$phosphor:regular/mouse-left-click$$
+  - $$phosphor:regular/mouse-right-click$$
+  - ''
+  SYS:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - BT 1
-  - BT 2
+  - '&bt_lin'
   - BT 3
   - BT 4
   - {t: Reset, h: Boot}
@@ -136,13 +209,10 @@ layers:
   - Out USB
   - Out BT
   - BT Clear
-  - {type: held}
   - ''
+  - Toggle SYS
   - ''
-  - {type: held}
-  MSE: ['', Back Click, Middle Click, Forward Click, '', '', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
-    Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', '', '', '', '', '', '', '', '', '', Toggle MSE, '$$phosphor:regular/mouse-left-click$$', '$$phosphor:regular/mouse-right-click$$',
-    Toggle MSE]
+  - Base
 combos:
 - p: [12, 13]
   k: Delete

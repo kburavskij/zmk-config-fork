@@ -7,7 +7,7 @@ draw_config:
   key_rx: 6.0
   key_ry: 6.0
   dark_mode: true
-  n_columns: 1
+  n_columns: 2
   separate_combo_diagrams: false
   combo_diagrams_scale: 3
   inner_pad_w: 2.0
@@ -185,10 +185,54 @@ parse_config:
     '&ind_con': Show Conn
     '&studio_unlock': Studio Unlock
     '&soft_off': Soft Off
+    '&case_snake': Snake
+    '&case_camel': Camel
+    '&case_kebab': Kebab
+    '&os_sel OS_MAC': $$mdi:apple$$
+    '&os_sel OS_LIN': $$mdi:penguin$$
+    '&hml_outer 0 A': {t: A, h: '$$phosphor:regular/control$$'}
+    '&hml_inner 0 D': {t: D, h: '$$phosphor:regular/command$$'}
+    '&hmr_inner 0 K': {t: K, h: '$$phosphor:regular/command$$'}
+    '&hmr_outer 0 SEMI': {t: ;, h: '$$phosphor:regular/control$$'}
+    '&hml_outer 0 EQUAL': {t: '=', h: '$$phosphor:regular/control$$'}
+    '&hml_inner 0 LBRC': {t: '{', h: '$$phosphor:regular/command$$'}
+    '&hmr_inner 0 RBRC': {t: '}', h: '$$phosphor:regular/command$$'}
+    '&hmr_outer 0 COLON': {t: ':', h: '$$phosphor:regular/control$$'}
+    '&hml_line_start 0 0': {t: StartLn, h: '$$phosphor:regular/control$$'}
+    '&hml_prev_word LALT 0': {t: Prev Word, h: '$$phosphor:regular/option$$'}
+    '&hml_del_prev_word 0 0': {t: Del Word, h: '$$phosphor:regular/command$$'}
+    '&hml_next_word LSHFT 0': {t: Next Word, h: '$$phosphor:regular/arrow-fat-up$$'}
+    '&hmr_inner 0 UP': {t: ↑, h: '$$phosphor:regular/command$$'}
+    '&hmr_outer 0 DEL': {t: ⌦, h: '$$phosphor:regular/control$$'}
+    '&hmr_del_line 0 0': {t: Del Line, h: '$$phosphor:regular/control$$'}
+    '&ok_mod_outer': Ctrl/Cmd
+    '&ok_mod_inner': Cmd/Ctrl
+    '&ok_line_start': StartLn
+    '&ok_prev_word': Prev Word
+    '&ok_del_prev_word': Del Word
+    '&ok_next_word': Next Word
+    '&ok_line_end': EndLn
+    '&ok_back': Back
+    '&ok_forward': Forward
+    '&ok_prev_tab_gui': Prev Tab
+    '&ok_next_tab_gui': Next Tab
+    '&ok_del_line': Del Line
+    '&kp MEH(H)': Homerow
+    '&kp MEH(SPACE)': Leader
+    '&ok_doc_start': Doc Start
+    '&ok_doc_end': Doc End
+    '&ok_find': Find
     '&out OUT_USB': Out USB
     '&out OUT_BLE': Out BT
-    '&tof MSE': Toggle MSE
-    '&tof 4': Toggle MSE
+    '&tog MSE': Toggle MSE
+    '&tog SYS': Toggle SYS
+    '&to BASE': Base
+    '&sl MSE': Sticky MSE
+    '&sk LSHFT': Sticky Shift
+    '&tof MSE': Exit MSE
+    '&tof 4': Exit MSE
+    '&drag_on': Drag On
+    '&drag_off': Drag Off
     '&bt BT_SEL 0': BT 1
     '&bt BT_SEL 1': BT 2
     '&bt BT_SEL 2': BT 3
@@ -200,6 +244,18 @@ parse_config:
     '&mmv MOVE_DOWN': Mouse ↓
     '&mmv MOVE_LEFT': Mouse ←
     '&mmv MOVE_RIGHT': Mouse →
+    '&fmmv MOVE_UP': Mouse ↑↑
+    '&fmmv MOVE_DOWN': Mouse ↓↓
+    '&fmmv MOVE_LEFT': Mouse ←←
+    '&fmmv MOVE_RIGHT': Mouse →→
+    '&fmsc MOVE_UP': Scroll ↑↑
+    '&fmsc MOVE_DOWN': Scroll ↓↓
+    '&fmsc MOVE_LEFT': Scroll ←←
+    '&fmsc MOVE_RIGHT': Scroll →→
+    '&msc MOVE_UP': Scroll ↑
+    '&msc MOVE_DOWN': Scroll ↓
+    '&msc MOVE_LEFT': Scroll ←
+    '&msc MOVE_RIGHT': Scroll →
     '&msc SCRL_UP': Scroll ↑
     '&msc SCRL_DOWN': Scroll ↓
     '&msc SCRL_LEFT': Scroll ←
@@ -218,16 +274,16 @@ parse_config:
   layer_legend_map: {}
   mark_alternate_layer_activators: false
   modifier_fn_map:
-    left_ctrl: $$phosphor:regular/control$$
-    right_ctrl: $$phosphor:regular/control$$
-    left_shift: $$phosphor:regular/arrow-fat-up$$
-    right_shift: $$phosphor:regular/arrow-fat-up$$
-    left_alt: $$phosphor:regular/option$$
-    right_alt: $$phosphor:regular/option$$
-    left_gui: $$phosphor:regular/command$$
-    right_gui: $$phosphor:regular/command$$
-    keycode_combiner: '{mods}+{key}'
-    mod_combiner: '{mod_1}+{mod_2}'
+    left_ctrl: Ctrl
+    right_ctrl: Ctrl
+    left_shift: Shift
+    right_shift: Shift
+    left_alt: Alt
+    right_alt: Alt
+    left_gui: Cmd
+    right_gui: Cmd
+    keycode_combiner: '{mods} + {key}'
+    mod_combiner: '{mod_1} + {mod_2}'
     special_combinations:
       left_ctrl+left_alt+left_gui+left_shift: Hyper
       left_ctrl+left_alt+left_shift: Meh
@@ -304,8 +360,12 @@ parse_config:
   zmk_keycode_map:
     C_MUTE: $$mdi:volume-off$$
     C_PP: $$mdi:play-pause$$
+    C_PLAY: $$mdi:play$$
+    C_STOP: $$mdi:stop$$
     C_VOL_UP: $$mdi:volume-high$$
     C_VOL_DN: $$mdi:volume-medium$$
+    C_BRI_UP: Bright +
+    C_BRI_DN: Bright -
     C_NEXT: $$mdi:skip-forward$$
     C_PREV: $$mdi:skip-backward$$
     BT: $$mdi:bluetooth$$
@@ -320,7 +380,7 @@ parse_config:
     RSHFT: $$phosphor:regular/arrow-fat-up$$
     ESC: Esc
     SPACE: $$mdi:keyboard-space$$
-    BSPC: $$phosphor:regular/backspace$$
+    BSPC: Bspc
     RET: ⏎
     ENTER: ⏎
     TAB: ↹
@@ -335,6 +395,14 @@ parse_config:
     LG(C): Copy
     LG(X): Cut
     LG(V): Paste
+    LA(LS(LCTRL)): $$mdi:flash$$
+    LC(LA(LS(LG(H)))): Meh F14
+    LA(LS(LS(LG(F12)))): Meh F12
+    LA(LEFT): Prev Word
+    LA(RIGHT): Next Word
+    LA(BSPC): Del Word
+    LG(LEFT): StartLn
+    LG(RIGHT): EndLn
     UP: ↑
     DOWN: ↓
     LEFT: ←
@@ -414,6 +482,8 @@ parse_config:
       draw_separate: true
     combo_enter:
       draw_separate: true
+    combo_sticky_shift:
+      draw_separate: true
     combo_cut:
       a: bottom
       o: 0.2
@@ -423,8 +493,24 @@ parse_config:
     combo_indbat:
       a: top
       o: 1
+    combo_os_mac:
+      a: top
+      o: 0.2
+    combo_os_linux:
+      a: top
+      o: 0.2
     combo_indcon:
       a: top
       o: 0.5
+    combo_camel_case:
+      a: top
+      o: 0.1
+    combo_snake_case:
+      a: top
+      o: 0.01
+    combo_kebab_case:
+      a: top
+      o: 0.1
+
   zmk_preamble: '#define KEYMAP_DRAWER'
   zmk_additional_includes: []
