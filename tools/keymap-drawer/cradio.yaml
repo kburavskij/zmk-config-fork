@@ -195,9 +195,21 @@ combos:
 - p: [13, 12]
   k: $$phosphor:regular/control$$+F
   l: [BASE]
-- p: [3, 2]
+- p: [2, 1]
   k: ↹
   l: [BASE]
 - p: [23, 22]
   k: '`'
   l: [BASE]
+- p: [9, 29]
+  k: '&email_macro'
+  l: [BASE]
+- p: [9, 19]
+  k: '&pass1_macro'
+  l: [BASE]
+- p: [19, 29]
+  k: '&pass2_macro'
+  l: [BASE]
+- p: [14, 15]
+  k: F13
+  l: [FNC]
