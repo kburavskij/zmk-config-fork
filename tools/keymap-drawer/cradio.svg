@@ -1,16 +1,7 @@
-<svg width="780" height="1875" viewBox="0 0 780 1875" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1560" height="1149" viewBox="0 0 1560 1149" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>/* start glyphs */
-<svg id="mdi:apple">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple" viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" /></svg>
-</svg>
-<svg id="mdi:flash">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-flash" viewBox="0 0 24 24"><path d="M7,2V13H10V22L17,10H13L17,2H7Z" /></svg>
-</svg>
 <svg id="mdi:keyboard-space">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-space" viewBox="0 0 24 24"><path d="M3 15H5V19H19V15H21V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15Z" /></svg>
-</svg>
-<svg id="mdi:penguin">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-penguin" viewBox="0 0 24 24"><path d="M19,16C19,17.72 18.37,19.3 17.34,20.5C17.75,20.89 18,21.41 18,22H6C6,21.41 6.25,20.89 6.66,20.5C5.63,19.3 5,17.72 5,16H3C3,14.75 3.57,13.64 4.46,12.91L4.47,12.89C6,11.81 7,10 7,8V7A5,5 0 0,1 12,2A5,5 0 0,1 17,7V8C17,10 18,11.81 19.53,12.89L19.54,12.91C20.43,13.64 21,14.75 21,16H19M16,16A4,4 0 0,0 12,12A4,4 0 0,0 8,16A4,4 0 0,0 12,20A4,4 0 0,0 16,16M10,9L12,10.5L14,9L12,7.5L10,9M10,5A1,1 0 0,0 9,6A1,1 0 0,0 10,7A1,1 0 0,0 11,6A1,1 0 0,0 10,5M14,5A1,1 0 0,0 13,6A1,1 0 0,0 14,7A1,1 0 0,0 15,6A1,1 0 0,0 14,5Z" /></svg>
 </svg>
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
@@ -415,7 +406,6 @@ use.phosphor\:regular\/control {
 <g transform="translate(30, 207)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
-<use href="#mdi:flash" xlink:href="#mdi:flash" x="-6" y="14" height="12" width="12.0" class="key hold glyph mdi:flash"/>
 </g>
 <g transform="translate(90, 169)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -452,7 +442,6 @@ use.phosphor\:regular\/control {
 <g transform="translate(690, 207)" class="key keypos-29">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">/</text>
-<use href="#mdi:flash" xlink:href="#mdi:flash" x="-6" y="14" height="12" width="12.0" class="key hold glyph mdi:flash"/>
 </g>
 <g transform="translate(237, 236) rotate(15.0)" class="key keypos-30">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -526,9 +515,63 @@ use.phosphor\:regular\/control {
 <rect rx="6" ry="6" x="346" y="54" width="28" height="28" class="combo"/>
 <text x="360" y="68" class="combo tap"><tspan style="font-size: 64%">&amp;main_macro</tspan></text>
 </g>
+<g class="combo combopos-9">
+<rect rx="6" ry="6" x="46" y="174" width="28" height="28" class="combo"/>
+<text x="60" y="188" class="combo tap">
+<tspan x="60" dy="-0.6em">Ctrl</tspan><tspan x="60" dy="1.2em">…</tspan>
+</text>
+</g>
+<g class="combo combopos-10">
+<path d="M90,178 l-42,20" class="combo"/>
+<path d="M90,178 l42,-20" class="combo"/>
+<rect rx="6" ry="6" x="76" y="164" width="28" height="28" class="combo"/>
+<text x="90" y="178" class="combo tap">
+<tspan x="90" dy="-0.6em">Ctrl</tspan><tspan x="90" dy="1.2em">…</tspan>
+</text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="46" y="114" width="28" height="28" class="combo"/>
+<text x="60" y="128" class="combo tap">
+<tspan x="60" dy="-0.6em">Ctrl</tspan><tspan x="60" dy="1.2em">…</tspan>
+</text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="106" y="86" width="28" height="28" class="combo"/>
+<text x="120" y="100" class="combo tap">
+<tspan x="120" dy="-0.6em">Ctrl</tspan><tspan x="120" dy="1.2em">…</tspan>
+</text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="166" y="85" width="28" height="28" class="combo"/>
+<text x="180" y="99" class="combo tap">
+<tspan x="180" dy="-0.6em">Ctrl</tspan><tspan x="180" dy="1.2em">…</tspan>
+</text>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="106" y="26" width="28" height="28" class="combo"/>
+<text x="120" y="40" class="combo tap">↹</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="166" y="145" width="28" height="28" class="combo"/>
+<text x="180" y="159" class="combo tap">`</text>
+</g>
+<g class="combo combopos-16">
+<path d="M690,147 l0,-40" class="combo"/>
+<path d="M690,147 l0,40" class="combo"/>
+<rect rx="6" ry="6" x="676" y="133" width="28" height="28" class="combo"/>
+<text x="690" y="147" class="combo tap"><tspan style="font-size: 64%">&amp;email_mac…</tspan></text>
+</g>
+<g class="combo combopos-17">
+<rect rx="6" ry="6" x="676" y="103" width="28" height="28" class="combo"/>
+<text x="690" y="117" class="combo tap"><tspan style="font-size: 64%">&amp;pass1_mac…</tspan></text>
+</g>
+<g class="combo combopos-18">
+<rect rx="6" ry="6" x="676" y="163" width="28" height="28" class="combo"/>
+<text x="690" y="177" class="combo tap"><tspan style="font-size: 64%">&amp;pass2_mac…</tspan></text>
 </g>
 </g>
-<g transform="translate(30, 363)" class="layer-SYM">
+</g>
+<g transform="translate(810, 0)" class="layer-SYM">
 <text x="0" y="30" class="label" id="SYM">SYM:</text>
 <g transform="translate(0, 60)">
 <g transform="translate(30, 87)" class="key keypos-0">
@@ -676,7 +719,7 @@ use.phosphor\:regular\/control {
 </g>
 </g>
 </g>
-<g transform="translate(30, 726)" class="layer-NAV">
+<g transform="translate(30, 363)" class="layer-NAV">
 <text x="0" y="30" class="label" id="NAV">NAV:</text>
 <g transform="translate(0, 60)">
 <g transform="translate(30, 87)" class="key keypos-0">
@@ -726,30 +769,23 @@ use.phosphor\:regular\/control {
 </text>
 <use href="#phosphor:regular/control" xlink:href="#phosphor:regular/control" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/control"/>
 </g>
-<g transform="translate(90, 109)" class="key keypos-11">
-<rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.9em">Prev</tspan><tspan x="0" dy="1.2em">Word</tspan>
-</text>
-<use href="#phosphor:regular/option" xlink:href="#phosphor:regular/option" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/option"/>
+<g transform="translate(90, 109)" class="key trans keypos-11">
+<rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(150, 90)" class="key keypos-12">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.9em">Del</tspan><tspan x="0" dy="1.2em">Word</tspan>
-</text>
+<use href="#mdi:skip-backward" xlink:href="#mdi:skip-backward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:skip-backward"/>
 <use href="#phosphor:regular/command" xlink:href="#phosphor:regular/command" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/command"/>
 </g>
 <g transform="translate(210, 107)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.9em">Next</tspan><tspan x="0" dy="1.2em">Word</tspan>
-</text>
+<use href="#mdi:play-pause" xlink:href="#mdi:play-pause" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:play-pause"/>
 <use href="#phosphor:regular/arrow-fat-up" xlink:href="#phosphor:regular/arrow-fat-up" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/arrow-fat-up"/>
 </g>
 <g transform="translate(270, 115)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">EndLn</text>
+<use href="#mdi:skip-forward" xlink:href="#mdi:skip-forward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:skip-forward"/>
 </g>
 <g transform="translate(450, 115)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -772,24 +808,20 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(690, 147)" class="key keypos-19">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.9em">Del</tspan><tspan x="0" dy="1.2em">Line</tspan>
-</text>
+<use href="#mdi:volume-high" xlink:href="#mdi:volume-high" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-high"/>
 <use href="#phosphor:regular/control" xlink:href="#phosphor:regular/control" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/control"/>
 </g>
 <g transform="translate(30, 207)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">Back</text>
+<use href="#mdi:volume-off" xlink:href="#mdi:volume-off" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-off"/>
 </g>
-<g transform="translate(90, 169)" class="key keypos-21">
-<rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Prev</tspan><tspan x="0" dy="1.2em">Tab</tspan>
-</text>
+<g transform="translate(90, 169)" class="key trans keypos-21">
+<rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(150, 150)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">Homerow</text>
+<text x="0" y="0" class="key tap">APP</text>
 </g>
 <g transform="translate(210, 167)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -809,17 +841,15 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(570, 150)" class="key keypos-27">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">Leader</text>
+<text x="0" y="0" class="key tap">,</text>
 </g>
 <g transform="translate(630, 169)" class="key keypos-28">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Next</tspan><tspan x="0" dy="1.2em">Tab</tspan>
-</text>
+<text x="0" y="0" class="key tap">.</text>
 </g>
 <g transform="translate(690, 207)" class="key keypos-29">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">Forward</text>
+<use href="#mdi:volume-medium" xlink:href="#mdi:volume-medium" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-medium"/>
 </g>
 <g transform="translate(237, 236) rotate(15.0)" class="key trans keypos-30">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key trans"/>
@@ -838,7 +868,7 @@ use.phosphor\:regular\/control {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1089)" class="layer-FNC">
+<g transform="translate(810, 363)" class="layer-FNC">
 <text x="0" y="30" class="label" id="FNC">FNC:</text>
 <g transform="translate(0, 60)">
 <g transform="translate(30, 87)" class="key keypos-0">
@@ -923,60 +953,67 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(30, 207)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<use href="#mdi:volume-medium" xlink:href="#mdi:volume-medium" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-medium"/>
-<use href="#mdi:volume-off" xlink:href="#mdi:volume-off" x="-6" y="14" height="12" width="12.0" class="key hold glyph mdi:volume-off"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">BT</tspan><tspan x="0" dy="1.2em">1</tspan>
+</text>
 </g>
 <g transform="translate(90, 169)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<use href="#mdi:skip-backward" xlink:href="#mdi:skip-backward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:skip-backward"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">BT</tspan><tspan x="0" dy="1.2em">2</tspan>
+</text>
 </g>
 <g transform="translate(150, 150)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Toggle</tspan><tspan x="0" dy="1.2em">MSE</tspan>
+<tspan x="0" dy="-0.6em">BT</tspan><tspan x="0" dy="1.2em">3</tspan>
 </text>
 </g>
 <g transform="translate(210, 167)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Print</tspan><tspan x="0" dy="1.2em">Scrn</tspan>
+<tspan x="0" dy="-0.6em">BT</tspan><tspan x="0" dy="1.2em">4</tspan>
 </text>
 </g>
 <g transform="translate(270, 175)" class="key keypos-24">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Bright</tspan><tspan x="0" dy="1.2em">-</tspan>
-</text>
+<text x="0" y="0" class="key tap">Reset</text>
+<text x="0" y="26" class="key hold">Boot</text>
 </g>
 <g transform="translate(450, 175)" class="key keypos-25">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Bright</tspan><tspan x="0" dy="1.2em">+</tspan>
-</text>
+<text x="0" y="0" class="key tap">Reset</text>
+<text x="0" y="26" class="key hold">Boot</text>
 </g>
 <g transform="translate(510, 167)" class="key keypos-26">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Studio</tspan><tspan x="0" dy="1.2em">Unlock</tspan>
+</text>
 </g>
 <g transform="translate(570, 150)" class="key keypos-27">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<use href="#mdi:play-pause" xlink:href="#mdi:play-pause" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:play-pause"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Out</tspan><tspan x="0" dy="1.2em">USB</tspan>
+</text>
 </g>
 <g transform="translate(630, 169)" class="key keypos-28">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<use href="#mdi:skip-forward" xlink:href="#mdi:skip-forward" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:skip-forward"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Out</tspan><tspan x="0" dy="1.2em">BT</tspan>
+</text>
 </g>
 <g transform="translate(690, 207)" class="key keypos-29">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<use href="#mdi:volume-high" xlink:href="#mdi:volume-high" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-high"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">BT</tspan><tspan x="0" dy="1.2em">Clear</tspan>
+</text>
 </g>
 <g transform="translate(237, 236) rotate(15.0)" class="key held keypos-30">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key held"/>
 </g>
 <g transform="translate(299, 262) rotate(30.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Toggle</tspan><tspan x="0" dy="1.2em">SYS</tspan>
-</text>
 </g>
 <g transform="translate(421, 262) rotate(-30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1009,21 +1046,14 @@ use.phosphor\:regular\/control {
 </text>
 </g>
 <g class="combo combopos-3">
-<path d="M90,-13 h-54 a6.0,6.0 0 0 0 -6.0,6.0 v74" class="combo"/>
-<path d="M90,-13 l0,42" class="combo"/>
-<path d="M90,-13 h54 a6.0,6.0 0 0 1 6.0,6.0 v17" class="combo"/>
-<rect rx="6" ry="6" x="76" y="-27" width="28" height="28" class="combo"/>
-<use href="#mdi:apple" xlink:href="#mdi:apple" x="83" y="-20" height="14" width="14.0" class="combo tap glyph mdi:apple"/>
-</g>
-<g class="combo combopos-4">
-<path d="M630,-13 h-54 a6.0,6.0 0 0 0 -6.0,6.0 v17" class="combo"/>
-<path d="M630,-13 l0,42" class="combo"/>
-<path d="M630,-13 h54 a6.0,6.0 0 0 1 6.0,6.0 v74" class="combo"/>
-<rect rx="6" ry="6" x="616" y="-27" width="28" height="28" class="combo"/>
-<use href="#mdi:penguin" xlink:href="#mdi:penguin" x="623" y="-20" height="14" width="14.0" class="combo tap glyph mdi:penguin"/>
+<path d="M360,115 l-70,0" class="combo"/>
+<path d="M360,115 l70,0" class="combo"/>
+<rect rx="6" ry="6" x="346" y="101" width="28" height="28" class="combo"/>
+<text x="360" y="115" class="combo tap">F13</text>
 </g>
 </g>
-<g transform="translate(30, 1452)" class="layer-MSE">
+</g>
+<g transform="translate(30, 726)" class="layer-MSE">
 <text x="0" y="30" class="label" id="MSE">MSE:</text>
 <g transform="translate(0, 60)">
 <g transform="translate(30, 87)" class="key keypos-0">
@@ -1126,15 +1156,9 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(90, 169)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Drag</tspan><tspan x="0" dy="1.2em">On</tspan>
-</text>
 </g>
 <g transform="translate(150, 150)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Drag</tspan><tspan x="0" dy="1.2em">Off</tspan>
-</text>
 </g>
 <g transform="translate(210, 167)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1159,9 +1183,10 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(237, 236) rotate(15.0)" class="key keypos-30">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<a href="#MSF">
-<text x="0" y="0" class="key tap layer-activator">MSF</text>
-</a></g>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Exit</tspan><tspan x="0" dy="1.2em">MSE</tspan>
+</text>
+</g>
 <g transform="translate(299, 262) rotate(30.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <use href="#phosphor:regular/mouse-left-click" xlink:href="#phosphor:regular/mouse-left-click" x="-7" y="-7" height="14" width="14.0" class="key tap glyph phosphor:regular/mouse-left-click"/>
@@ -1173,9 +1198,9 @@ use.phosphor\:regular\/control {
 <g transform="translate(483, 236) rotate(-15.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Toggle</tspan><tspan x="0" dy="1.2em">MSE</tspan>
+<tspan x="0" dy="-0.6em">Exit</tspan><tspan x="0" dy="1.2em">MSE</tspan>
 </text>
 </g>
 </g>
 </g>
-<text x="750.0" y="1845.0" class="footer"><a href="https://github.com/MuhametSmaili/zmk-config">MuhametSmaili/zmk-config</a></text></svg>
+<text x="1530.0" y="1119.0" class="footer"><a href="https://github.com/MuhametSmaili/zmk-config">MuhametSmaili/zmk-config</a></text></svg>
