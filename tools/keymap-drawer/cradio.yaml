@@ -32,7 +32,7 @@ layers:
   - .
   - /
   - {t: '$$mdi:keyboard-space$$', h: SYM}
-  - {t: Tab, h: '$$phosphor:regular/control$$'}
+  - {t: Tab, h: '$$phosphor:regular/command$$'}
   - {t: Enter, h: '$$phosphor:regular/arrow-fat-up$$'}
   - {t: Backspace, h: NAV}
   SYM:
@@ -168,15 +168,6 @@ combos:
 - p: [0, 1]
   k: Esc
   l: [BASE]
-- p: [14, 15]
-  k: Soft Off
-  l: [FNC]
-- p: [2, 7]
-  k: Show Batt
-  l: [FNC]
-- p: [3, 6]
-  k: Show Conn
-  l: [FNC]
 - p: [0, 1, 8, 9]
   k: Primary Password
   l: [BASE]
@@ -201,15 +192,3 @@ combos:
 - p: [23, 22]
   k: '`'
   l: [BASE]
-- p: [9, 29]
-  k: Email
-  l: [BASE]
-- p: [9, 19]
-  k: Password 1
-  l: [BASE]
-- p: [19, 29]
-  k: Password 2
-  l: [BASE]
-- p: [14, 15]
-  k: F13
-  l: [FNC]
