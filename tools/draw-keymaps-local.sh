@@ -12,12 +12,12 @@ CONTAINER_DRAW_SCRIPT="/zmk-config/tools/docker/draw-in-container.sh"
 source "${REPO_ROOT}/tools/lib/docker-common.sh"
 
 build_draw_image_if_missing() {
-	if docker image inspect "${IMAGE}" >/dev/null 2>&1; then
+	if "${CONTAINER_CMD}" image inspect "${IMAGE}" >/dev/null 2>&1; then
 		return
 	fi
 
 	echo "Building local keymap-drawer image: ${IMAGE}"
-	docker build \
+	"${CONTAINER_CMD}" build \
 		-t "${IMAGE}" \
 		-f "${REPO_ROOT}/tools/docker/Dockerfile.keymap-drawer" \
 		"${REPO_ROOT}"
@@ -42,9 +42,9 @@ fi
 ensure_docker
 build_draw_image_if_missing
 
-docker run --rm \
-	-v "${REPO_ROOT}:/zmk-config" \
-	-v "${WORKSPACE_VOLUME}:/work" \
+"${CONTAINER_CMD}" run --rm \
+	-v "${REPO_ROOT}:/zmk-config:Z" \
+	-v "${WORKSPACE_VOLUME}:/work:Z" \
 	"${IMAGE}" \
 	/bin/bash "${CONTAINER_DRAW_SCRIPT}" "${keymap_path}"
 

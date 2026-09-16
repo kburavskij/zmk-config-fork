@@ -32,9 +32,9 @@ layers:
   - .
   - /
   - {t: '$$mdi:keyboard-space$$', h: SYM}
-  - {t: ↹, h: '$$phosphor:regular/control$$'}
-  - {t: ⏎, h: '$$phosphor:regular/arrow-fat-up$$'}
-  - {t: Bspc, h: NAV}
+  - {t: Tab, h: '$$phosphor:regular/control$$'}
+  - {t: Enter, h: '$$phosphor:regular/arrow-fat-up$$'}
+  - {t: Backspace, h: NAV}
   SYM:
   - '!'
   - '@'
@@ -81,7 +81,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - {t: Print Scrn, h: '$$phosphor:regular/control$$'}
+  - {t: Print Screen, h: '$$phosphor:regular/control$$'}
   - {t: ▽, type: trans}
   - {t: '$$mdi:skip-backward$$', h: '$$phosphor:regular/command$$'}
   - {t: '$$mdi:play-pause$$', h: '$$phosphor:regular/arrow-fat-up$$'}
@@ -93,11 +93,11 @@ layers:
   - {t: '$$mdi:volume-high$$', h: '$$phosphor:regular/control$$'}
   - $$mdi:volume-off$$
   - {t: ▽, type: trans}
-  - APP
-  - PgUp
+  - Menu
+  - Page Up
   - Home
   - End
-  - PgDwn
+  - Page Down
   - ','
   - .
   - $$mdi:volume-medium$$
@@ -148,22 +148,22 @@ combos:
   k: Delete
   l: [BASE]
 - p: [21, 22]
-  k: '&ok_copy'
+  k: Copy
   l: [BASE]
 - p: [22, 23]
-  k: '&ok_paste'
+  k: Paste
   l: [BASE]
 - p: [16, 17]
   k: Esc
   l: [BASE]
 - p: [10, 11, 12]
-  k: ⏎
+  k: Enter
   l: [BASE]
 - p: [12, 13, 16, 17]
   k: Caps Word
   l: [BASE]
 - p: [21, 23]
-  k: '&ok_cut'
+  k: Cut
   l: [BASE]
 - p: [0, 1]
   k: Esc
@@ -178,37 +178,37 @@ combos:
   k: Show Conn
   l: [FNC]
 - p: [0, 1, 8, 9]
-  k: '&main_macro'
+  k: Primary Password
   l: [BASE]
 - p: [20, 21]
-  k: '&ok_undo'
+  k: Undo
   l: [BASE]
 - p: [20, 22]
-  k: '&ok_redo'
+  k: Redo
   l: [BASE]
 - p: [10, 11]
-  k: '&ok_select_all'
+  k: Select All
   l: [BASE]
 - p: [11, 12]
-  k: '&ok_save'
+  k: Save
   l: [BASE]
 - p: [13, 12]
   k: Find
   l: [BASE]
 - p: [2, 1]
-  k: ↹
+  k: Tab
   l: [BASE]
 - p: [23, 22]
   k: '`'
   l: [BASE]
 - p: [9, 29]
-  k: '&email_macro'
+  k: Email
   l: [BASE]
 - p: [9, 19]
-  k: '&pass1_macro'
+  k: Password 1
   l: [BASE]
 - p: [19, 29]
-  k: '&pass2_macro'
+  k: Password 2
   l: [BASE]
 - p: [14, 15]
   k: F13

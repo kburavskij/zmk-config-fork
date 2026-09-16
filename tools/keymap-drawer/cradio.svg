@@ -451,17 +451,17 @@ use.phosphor\:regular\/control {
 </a></g>
 <g transform="translate(299, 262) rotate(30.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">↹</text>
+<text x="0" y="0" class="key tap">Tab</text>
 <use href="#phosphor:regular/control" xlink:href="#phosphor:regular/control" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/control"/>
 </g>
 <g transform="translate(421, 262) rotate(-30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">⏎</text>
+<text x="0" y="0" class="key tap">Enter</text>
 <use href="#phosphor:regular/arrow-fat-up" xlink:href="#phosphor:regular/arrow-fat-up" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/arrow-fat-up"/>
 </g>
 <g transform="translate(483, 236) rotate(-15.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">Bspc</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 78%">Backspace</tspan></text>
 <a href="#NAV">
 <text x="0" y="26" class="key hold layer-activator">NAV</text>
 </a></g>
@@ -471,11 +471,11 @@ use.phosphor\:regular\/control {
 </g>
 <g class="combo combopos-1">
 <rect rx="6" ry="6" x="106" y="146" width="28" height="28" class="combo"/>
-<text x="120" y="160" class="combo tap"><tspan style="font-size: 88%">&amp;ok_copy</tspan></text>
+<text x="120" y="160" class="combo tap">Copy</text>
 </g>
 <g class="combo combopos-2">
 <rect rx="6" ry="6" x="166" y="145" width="28" height="28" class="combo"/>
-<text x="180" y="159" class="combo tap"><tspan style="font-size: 78%">&amp;ok_paste</tspan></text>
+<text x="180" y="159" class="combo tap">Paste</text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="526" y="85" width="28" height="28" class="combo"/>
@@ -485,7 +485,7 @@ use.phosphor\:regular\/control {
 <path d="M90,115 l-42,22" class="combo"/>
 <path d="M90,115 l42,-18" class="combo"/>
 <rect rx="6" ry="6" x="76" y="101" width="28" height="28" class="combo"/>
-<text x="90" y="115" class="combo tap">⏎</text>
+<text x="90" y="115" class="combo tap">Enter</text>
 </g>
 <g class="combo combopos-5">
 <path d="M360,99 l-190,-8" class="combo"/>
@@ -501,7 +501,7 @@ use.phosphor\:regular\/control {
 <path d="M150,168 l-40,1" class="combo"/>
 <path d="M150,168 l40,-1" class="combo"/>
 <rect rx="6" ry="6" x="136" y="154" width="28" height="28" class="combo"/>
-<text x="150" y="168" class="combo tap">&amp;ok_cut</text>
+<text x="150" y="168" class="combo tap">Cut</text>
 </g>
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="46" y="54" width="28" height="28" class="combo"/>
@@ -513,25 +513,29 @@ use.phosphor\:regular\/control {
 <path d="M360,68 l250,-18" class="combo"/>
 <path d="M360,68 l310,18" class="combo"/>
 <rect rx="6" ry="6" x="346" y="54" width="28" height="28" class="combo"/>
-<text x="360" y="68" class="combo tap"><tspan style="font-size: 64%">&amp;main_macro</tspan></text>
+<text x="360" y="68" class="combo tap">
+<tspan x="360" dy="-0.6em" style="font-size: 88%">Primary</tspan><tspan x="360" dy="1.2em" style="font-size: 88%">Password</tspan>
+</text>
 </g>
 <g class="combo combopos-9">
 <rect rx="6" ry="6" x="46" y="174" width="28" height="28" class="combo"/>
-<text x="60" y="188" class="combo tap"><tspan style="font-size: 88%">&amp;ok_undo</tspan></text>
+<text x="60" y="188" class="combo tap">Undo</text>
 </g>
 <g class="combo combopos-10">
 <path d="M90,178 l-42,20" class="combo"/>
 <path d="M90,178 l42,-20" class="combo"/>
 <rect rx="6" ry="6" x="76" y="164" width="28" height="28" class="combo"/>
-<text x="90" y="178" class="combo tap"><tspan style="font-size: 88%">&amp;ok_redo</tspan></text>
+<text x="90" y="178" class="combo tap">Redo</text>
 </g>
 <g class="combo combopos-11">
 <rect rx="6" ry="6" x="46" y="114" width="28" height="28" class="combo"/>
-<text x="60" y="128" class="combo tap"><tspan style="font-size: 64%">&amp;ok_select…</tspan></text>
+<text x="60" y="128" class="combo tap">
+<tspan x="60" dy="-0.6em">Select</tspan><tspan x="60" dy="1.2em">All</tspan>
+</text>
 </g>
 <g class="combo combopos-12">
 <rect rx="6" ry="6" x="106" y="86" width="28" height="28" class="combo"/>
-<text x="120" y="100" class="combo tap"><tspan style="font-size: 88%">&amp;ok_save</tspan></text>
+<text x="120" y="100" class="combo tap">Save</text>
 </g>
 <g class="combo combopos-13">
 <rect rx="6" ry="6" x="166" y="85" width="28" height="28" class="combo"/>
@@ -539,7 +543,7 @@ use.phosphor\:regular\/control {
 </g>
 <g class="combo combopos-14">
 <rect rx="6" ry="6" x="106" y="26" width="28" height="28" class="combo"/>
-<text x="120" y="40" class="combo tap">↹</text>
+<text x="120" y="40" class="combo tap">Tab</text>
 </g>
 <g class="combo combopos-15">
 <rect rx="6" ry="6" x="166" y="145" width="28" height="28" class="combo"/>
@@ -549,15 +553,19 @@ use.phosphor\:regular\/control {
 <path d="M690,147 l0,-40" class="combo"/>
 <path d="M690,147 l0,40" class="combo"/>
 <rect rx="6" ry="6" x="676" y="133" width="28" height="28" class="combo"/>
-<text x="690" y="147" class="combo tap"><tspan style="font-size: 64%">&amp;email_mac…</tspan></text>
+<text x="690" y="147" class="combo tap">Email</text>
 </g>
 <g class="combo combopos-17">
 <rect rx="6" ry="6" x="676" y="103" width="28" height="28" class="combo"/>
-<text x="690" y="117" class="combo tap"><tspan style="font-size: 64%">&amp;pass1_mac…</tspan></text>
+<text x="690" y="117" class="combo tap">
+<tspan x="690" dy="-0.6em" style="font-size: 88%">Password</tspan><tspan x="690" dy="1.2em" style="font-size: 88%">1</tspan>
+</text>
 </g>
 <g class="combo combopos-18">
 <rect rx="6" ry="6" x="676" y="163" width="28" height="28" class="combo"/>
-<text x="690" y="177" class="combo tap"><tspan style="font-size: 64%">&amp;pass2_mac…</tspan></text>
+<text x="690" y="177" class="combo tap">
+<tspan x="690" dy="-0.6em" style="font-size: 88%">Password</tspan><tspan x="690" dy="1.2em" style="font-size: 88%">2</tspan>
+</text>
 </g>
 </g>
 </g>
@@ -755,7 +763,7 @@ use.phosphor\:regular\/control {
 <g transform="translate(30, 147)" class="key keypos-10">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.9em">Print</tspan><tspan x="0" dy="1.2em">Scrn</tspan>
+<tspan x="0" dy="-0.9em">Print</tspan><tspan x="0" dy="1.2em">Screen</tspan>
 </text>
 <use href="#phosphor:regular/control" xlink:href="#phosphor:regular/control" x="-6" y="14" height="12" width="12.0" class="key hold glyph phosphor:regular/control"/>
 </g>
@@ -811,11 +819,13 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(150, 150)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">APP</text>
+<text x="0" y="0" class="key tap">Menu</text>
 </g>
 <g transform="translate(210, 167)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">PgUp</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Page</tspan><tspan x="0" dy="1.2em">Up</tspan>
+</text>
 </g>
 <g transform="translate(270, 175)" class="key keypos-24">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -827,7 +837,9 @@ use.phosphor\:regular\/control {
 </g>
 <g transform="translate(510, 167)" class="key keypos-26">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">PgDwn</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Page</tspan><tspan x="0" dy="1.2em">Down</tspan>
+</text>
 </g>
 <g transform="translate(570, 150)" class="key keypos-27">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1193,4 +1205,4 @@ use.phosphor\:regular\/control {
 </g>
 </g>
 </g>
-<text x="1530.0" y="1119.0" class="footer"><a href="https://github.com/MuhametSmaili/zmk-config">MuhametSmaili/zmk-config</a></text></svg>
+<text x="1530.0" y="1119.0" class="footer"><a href="https://github.com/kburavskij/zmk-config-fork">kburavskij/zmk-config-fork</a></text></svg>

@@ -32,9 +32,9 @@ layers:
   - .
   - {t: /, h: '$$mdi:flash$$'}
   - {t: '$$mdi:keyboard-space$$', h: SYM}
-  - {t: ↹, h: '$$phosphor:regular/control$$'}
-  - {t: ⏎, h: '$$phosphor:regular/arrow-fat-up$$'}
-  - {t: Bspc, h: NAV}
+  - {t: Tab, h: '$$phosphor:regular/control$$'}
+  - {t: Enter, h: '$$phosphor:regular/arrow-fat-up$$'}
+  - {t: Backspace, h: NAV}
   SYM:
   - '!'
   - '@'
@@ -94,10 +94,10 @@ layers:
   - Back
   - Prev Tab
   - Homerow
-  - PgUp
+  - Page Up
   - Home
   - End
-  - PgDwn
+  - Page Down
   - Leader
   - Next Tab
   - Forward
@@ -129,7 +129,7 @@ layers:
   - {t: '$$mdi:volume-medium$$', h: '$$mdi:volume-off$$'}
   - $$mdi:skip-backward$$
   - Toggle MSE
-  - Print Scrn
+  - Print Screen
   - Bright -
   - Bright +
   - ''
@@ -140,9 +140,9 @@ layers:
   - Toggle SYS
   - ''
   - {type: held}
-  MSE: ['', Back Click, Middle Click, Forward Click, '', '&main_macro', Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓, '$$phosphor:regular/mouse-right-click$$',
-    Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', Drag On, Drag Off, '', '', '', '', '', '', '', MSF, '$$phosphor:regular/mouse-left-click$$', '$$phosphor:regular/mouse-right-click$$',
-    Toggle MSE]
+  MSE: ['', Back Click, Middle Click, Forward Click, '', Primary Password, Scroll ↑, Mouse ↑, '', '', Scroll ←, '$$phosphor:regular/mouse-left-click$$', Scroll ↓,
+    '$$phosphor:regular/mouse-right-click$$', Scroll →, '', Mouse ←, Mouse ↓, Mouse →, '', '', Drag On, Drag Off, '', '', '', '', '', '', '', MSF, '$$phosphor:regular/mouse-left-click$$',
+    '$$phosphor:regular/mouse-right-click$$', Toggle MSE]
   MSF:
   - ''
   - Back Click
@@ -200,7 +200,7 @@ layers:
   - ''
   - ''
   - BT 1
-  - '&bt_lin'
+  - BT 2 Linux
   - BT 3
   - BT 4
   - {t: Reset, h: Boot}
@@ -230,7 +230,7 @@ combos:
   k: Esc
   l: [BASE]
 - p: [10, 11, 12]
-  k: ⏎
+  k: Enter
   l: [BASE]
 - p: [12, 13, 16, 17]
   k: Caps Word

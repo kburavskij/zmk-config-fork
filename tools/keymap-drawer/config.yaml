@@ -167,7 +167,7 @@ draw_config:
     use.phosphor\:regular\/control {
       color: #cdd6f4
     }
-  footer_text: <a href="https://github.com/MuhametSmaili/zmk-config">MuhametSmaili/zmk-config</a>
+  footer_text: <a href="https://github.com/kburavskij/zmk-config-fork">kburavskij/zmk-config-fork</a>
   shrink_wide_legends: 7
   style_layer_activators: true
   glyph_tap_size: 14
@@ -178,6 +178,14 @@ parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map:
+    '&kp BSPC': Backspace
+    '&kp ENTER': Enter
+    '&kp TAB': Tab
+    '&kp K_APP': Menu
+    '&kp PSCRN': Print Screen
+    '&kp PG_UP': Page Up
+    '&kp PG_DN': Page Down
+    '&kp DELETE': Delete
     '&sys_reset': Reset
     '&bootloader': Boot
     '&caps_word': Caps Word
@@ -222,6 +230,18 @@ parse_config:
     '&ok_doc_start': Doc Start
     '&ok_doc_end': Doc End
     '&ok_find': Find
+    '&ok_copy': Copy
+    '&ok_paste': Paste
+    '&ok_cut': Cut
+    '&ok_undo': Undo
+    '&ok_redo': Redo
+    '&ok_select_all': Select All
+    '&ok_save': Save
+    '&main_macro': Primary Password
+    '&email_macro': Email
+    '&pass1_macro': Password 1
+    '&pass2_macro': Password 2
+    '&bt_lin': BT 2 Linux
     '&out OUT_USB': Out USB
     '&out OUT_BLE': Out BT
     '&tog MSE': Toggle MSE
