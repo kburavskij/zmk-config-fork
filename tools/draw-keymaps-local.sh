@@ -24,14 +24,16 @@ build_draw_image_if_missing() {
 }
 
 if [[ $# -ne 1 ]]; then
-	echo "Usage: tools/draw-keymaps-local.sh <keyboard>" >&2
+	echo "Usage: tools/draw-keymaps-local.sh sweep" >&2
 	exit 1
 fi
 
-keyboard="$1"
-if [[ "${keyboard}" == "sweep" ]]; then
-	keyboard="cradio"
+if [[ "$1" != "sweep" && "$1" != "cradio" ]]; then
+	echo "Usage: tools/draw-keymaps-local.sh sweep" >&2
+	exit 1
 fi
+
+keyboard="cradio"
 
 keymap_path="config/${keyboard}.keymap"
 if [[ ! -f "${REPO_ROOT}/${keymap_path}" ]]; then

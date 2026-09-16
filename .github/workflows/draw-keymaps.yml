@@ -1,21 +1,49 @@
-# Draw keymap diagrams using keymap-drawer ZMK user config workflow
-name: Draw ZMK keymaps
+# Draw standard ZMK diagrams and committed custom YAML diagrams.
+name: Draw ZMK and Hyprland keymaps
 on:
   workflow_dispatch:
   push:
     paths:
-      - "config/*.keymap"
+      - ".github/workflows/draw-keymaps.yml"
+      - "config/cradio.keymap"
       - "config/*.dtsi"
       - "config/includes/*.dtsi"
       - "tools/keymap-drawer/config.yaml"
+      - "tools/keymap-drawer/*-hyprland.yaml"
+      - "tools/docker/Dockerfile.keymap-drawer"
+      - "tools/docker/draw-in-container.sh"
+      - "tools/draw-keymaps-local.sh"
+      - "tools/lib/docker-common.sh"
+      - "Makefile"
+
+concurrency:
+  group: draw-keymaps-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    with:
-      keymap_patterns: 'config/*.keymap'
-      config_path: tools/keymap-drawer/config.yaml
-      output_folder: tools/keymap-drawer
-      amend_commit: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+          submodules: recursive
+
+      - name: Render Cradio and Hyprland diagrams
+        run: make draw KEYBOARD=sweep
+
+      - name: Read last commit message
+        id: last_commit
+        run: echo "message=$(git log -1 --pretty=%s)" >> "$GITHUB_OUTPUT"
+
+      - name: Amend generated diagrams into the triggering commit
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          file_pattern: 'tools/keymap-drawer/cradio.svg tools/keymap-drawer/cradio.yaml tools/keymap-drawer/cradio-hyprland.svg'
+          commit_message: '${{ steps.last_commit.outputs.message }}'
+          commit_options: '--amend --no-edit'
+          push_options: '--force-with-lease'
+          skip_fetch: true

@@ -1,5 +1,12 @@
 # 34-Key ZMK Layout (Sweep / Urchin / Forager)
 
+<p align="center">
+  <a href="./tools/keymap-drawer/cradio.svg">
+    <img src="./tools/keymap-drawer/cradio.svg" alt="Current Cradio/Sweep keymap" width="1024">
+  </a>
+</p>
+<p align="center"><a href="./tools/keymap-drawer/cradio.svg">Open the full-size keymap</a></p>
+
 | [Ferris Sweep](https://github.com/davidphilipbarr/Sweep)                                                                                  | [Urchin](https://github.com/duckyb/urchin)                                                                                          | [Forager](https://github.com/carrefinho/forager)                                                                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img width="250" height="200" alt="Ferris Sweep" src="https://github.com/user-attachments/assets/b81f97ac-0166-47d5-a392-54801568a16a" /> | <img width="250" height="200" alt="Urchin" src="https://github.com/user-attachments/assets/3eb89138-079e-4ab2-a906-678a655aec41" /> | <img width="250" height="200" alt="Forager keyboard" src="https://github.com/user-attachments/assets/5efa6680-a84d-45ea-9c31-fbd49ce2de95" /> |
@@ -111,8 +118,8 @@ Use local Docker when iterating on one board.
 - `make build KEYBOARD=<sweep|urchin|forager>` builds a single board in dongleless mode
 - `make build KEYBOARD=<sweep|urchin|forager> DONGLE=1` builds the dongle profile set
 - `make build KEYBOARD=settings-reset` builds the nice!nano settings-reset UF2
-- `make draw KEYBOARD=<sweep|urchin|forager>` regenerates the keymap drawing;
-  the Sweep target also regenerates its Hyprland shortcut cheat sheet
+- `make draw KEYBOARD=sweep` regenerates the Cradio/Sweep keymap and its
+  Hyprland shortcut cheat sheet
 - Docker must be running first
 
 ```sh
@@ -124,8 +131,6 @@ make build KEYBOARD=urchin DONGLE=1
 make build KEYBOARD=forager
 
 make draw KEYBOARD=sweep
-make draw KEYBOARD=urchin
-make draw KEYBOARD=forager
 ```
 
 Build notes:
@@ -156,12 +161,6 @@ The opening menu explains every choice:
 The default keyboard is `sweep`. Advanced command-line options remain available
 under `./flash-local.sh --help` for automation.
 
-## Layer Map
-
-<p align="center">
-<img src="./tools/keymap-drawer/cradio.svg" alt="Shared 34-key layout preview" width="1024">
-</p>
-
 ## Hyprland Shortcut Map
 
 This second Sweep/Ferris diagram translates the physical keys into the actions
@@ -169,6 +168,10 @@ configured by the current Hyprland setup. It is documentation only and does not
 change the firmware. Pink keys are the physical thumb keys held for each action:
 the left inner thumb is Super/Tab and the right inner thumb is Shift/Enter. The
 diagram matches the optional Sweep profile toggled from Waybar.
+
+GitHub Actions regenerates this diagram whenever its committed Hyprland YAML,
+the Cradio keymap, or the shared drawing configuration changes. Locally,
+`make draw KEYBOARD=sweep` regenerates both the standard and Hyprland diagrams.
 
 <p align="center">
 <img src="./tools/keymap-drawer/cradio-hyprland.svg" alt="Ferris Hyprland shortcut cheat sheet" width="1024">

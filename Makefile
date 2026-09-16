@@ -10,8 +10,7 @@ help:
 	@echo "  make build KEYBOARD=urchin           Build right/left_central"
 	@echo "  make build KEYBOARD=urchin DONGLE=1  Build left_peripheral/right/dongle"
 	@echo "  make build KEYBOARD=settings-reset   Build nice!nano settings reset firmware"
-	@echo "  make draw KEYBOARD=sweep             Draw one keymap (Sweep alias)"
-	@echo "  make draw KEYBOARD=urchin            Draw one keymap"
+	@echo "  make draw KEYBOARD=sweep             Draw Cradio/Sweep and Hyprland maps"
 
 build:
 	@if [[ -z "$(KEYBOARD)" ]]; then \
@@ -21,8 +20,8 @@ build:
 	tools/build-local-docker.sh "$(KEYBOARD)" $(if $(filter 1,$(DONGLE)),--dongle,)
 
 draw:
-	@if [[ -z "$(KEYBOARD)" ]]; then \
-		echo "Usage: make draw KEYBOARD=<sweep|urchin|forager>"; \
+	@if [[ "$(KEYBOARD)" != "sweep" && "$(KEYBOARD)" != "cradio" ]]; then \
+		echo "Usage: make draw KEYBOARD=sweep"; \
 		exit 1; \
 	fi
 	tools/draw-keymaps-local.sh "$(KEYBOARD)"
