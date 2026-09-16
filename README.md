@@ -143,17 +143,18 @@ works around Linux mounting the UF2 volume read-only, and copies artifacts from
 `build/local/` regardless of your current working directory.
 
 ```sh
-# Normal firmware update; preserves Bluetooth and split bonds
 ./flash-local.sh
-
-# Full recovery; erases and recreates Bluetooth and split bonds
-make build KEYBOARD=settings-reset
-./flash-local.sh --reset
 ```
 
-The default keyboard is `sweep`. Pass another artifact prefix when needed, for
-example `./flash-local.sh urchin`. Run `./flash-local.sh --check` for a
-non-destructive dependency and artifact check.
+The opening menu explains every choice:
+
+1. Flash normally and preserve Bluetooth pairing.
+2. Reset and flash both halves for recovery. Build the reset artifact first
+   with `make build KEYBOARD=settings-reset`.
+3. Cancel without changing the keyboard.
+
+The default keyboard is `sweep`. Advanced command-line options remain available
+under `./flash-local.sh --help` for automation.
 
 ## Layer Map
 

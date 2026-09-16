@@ -201,25 +201,20 @@ readonly ICON_FLASH="󰇚"
 readonly ICON_SHIELD="󰒃"
 
 flash_banner() {
-  local mode="$1"
   _clear
-  printf '\n  %s%s%s  %s firmware%s\n' "$BOLD" "$MAGENTA" "$ICON_KEYBOARD" "$KEYBOARD" "$RESET"
-  printf '  %s%s%s\n\n' "$DIM" "$mode" "$RESET"
-  printf '  %sPrepare%s  →  %sLeft%s  →  %sRight%s\n\n' \
-    "$BLUE" "$RESET" "$CYAN" "$RESET" "$MAGENTA" "$RESET"
-  pause "Press Enter to start"
+  printf '\n  %s%s%s  Firmware ready%s\n\n' "$BOLD" "$GREEN" "$ICON_FLASH" "$RESET"
+  pause "Press Enter to start flashing"
 }
 
 ui_row() {
-  local color="$1" icon="$2" label="$3" message="$4"
-  printf '  %s%s  %-7s%s %s\n' "$color" "$icon" "$label" "$RESET" "$message"
+  local color="$1" icon="$2" message="$3"
+  printf '  %s%s%s  %s\n' "$color" "$icon" "$RESET" "$message"
 }
 
-usb_step()   { ui_row "$CYAN"    "$ICON_USB"   "USB"   "$1"; }
-reset_step() { ui_row "$MAGENTA" "$ICON_RESET" "RESET" "$1"; }
-power_step() { ui_row "$YELLOW"  "$ICON_POWER" "POWER" "$1"; }
-flash_step() { ui_row "$GREEN"   "$ICON_FLASH" "FLASH" "$1"; }
-shield_step(){ ui_row "$YELLOW"  "$ICON_SHIELD" "ADMIN" "$1"; }
+usb_step()   { ui_row "$CYAN"    "$ICON_USB"   "$1"; }
+reset_step() { ui_row "$MAGENTA" "$ICON_RESET" "$1"; }
+power_step() { ui_row "$YELLOW"  "$ICON_POWER" "$1"; }
+flash_step() { ui_row "$GREEN"   "$ICON_FLASH" "$1"; }
 
 flash_pause() {
   local icon="$1"
@@ -231,9 +226,46 @@ flash_pause() {
 flash_finish() {
   _clear
   printf '\n  %s%s✓  Firmware updated%s\n\n' "$BOLD" "$GREEN" "$RESET"
-  ui_row "$CYAN" "$ICON_KEYBOARD" "LEFT"  "${KEYBOARD}_left_central installed"
-  ui_row "$MAGENTA" "$ICON_KEYBOARD" "RIGHT" "${KEYBOARD}_right installed"
-  printf '\n'
+}
+
+choose_action() {
+  local choice=""
+
+  while true; do
+    _clear
+    printf '\n  %s%s%s  What do you want to do?%s\n\n' \
+      "$BOLD" "$BLUE" "$ICON_KEYBOARD" "$RESET"
+    printf '  %s1%s  Flash firmware\n' "$GREEN" "$RESET"
+    printf '     %sUpdate both halves and keep Bluetooth pairing.%s\n\n' "$DIM" "$RESET"
+    printf '  %s2%s  Reset and flash\n' "$YELLOW" "$RESET"
+    printf '     %sErase Bluetooth/split bonds, then update both halves.%s\n\n' "$DIM" "$RESET"
+    printf '  %s3%s  Cancel\n' "$RED" "$RESET"
+    printf '     %sExit without changing the keyboard.%s\n\n' "$DIM" "$RESET"
+    printf '  Choose 1, 2, or 3: '
+
+    if ! read -r choice; then
+      choice=3
+    fi
+
+    case "$choice" in
+      1)
+        FULL_RESET=0
+        return
+        ;;
+      2)
+        FULL_RESET=1
+        return
+        ;;
+      3)
+        printf '\n  Cancelled. Nothing was changed.\n\n'
+        exit 0
+        ;;
+      *)
+        printf '\n  Please choose 1, 2, or 3.\n'
+        sleep 1
+        ;;
+    esac
+  done
 }
 
 usage() {
@@ -241,6 +273,8 @@ usage() {
 Usage: ./flash-local.sh [--reset] [--check] [keyboard]
 
 Guided local flashing for a dongleless split ZMK keyboard.
+
+Run ./flash-local.sh without arguments to choose from a menu.
 
   keyboard   Artifact prefix under build/local (default: sweep)
   --reset    Erase settings on both halves before normal firmware.
@@ -260,6 +294,11 @@ KEYBOARD=sweep
 FULL_RESET=0
 CHECK_ONLY=0
 KEYBOARD_SET=0
+SHOW_MENU=0
+
+if (( $# == 0 )); then
+  SHOW_MENU=1
+fi
 
 while (( $# )); do
   case "$1" in
@@ -282,6 +321,10 @@ done
 if [[ ! "$KEYBOARD" =~ ^[a-zA-Z0-9_-]+$ ]]; then
   printf 'Invalid keyboard name: %s\n' "$KEYBOARD" >&2
   exit 2
+fi
+
+if (( SHOW_MENU )); then
+  choose_action
 fi
 
 BUILD_DIR="$SCRIPT_DIR/build/local"
@@ -466,7 +509,9 @@ flash_uf2() {
 }
 
 start_sudo_keepalive() {
-  shield_step "Needed only to write the temporary NICENANO USB volume."
+  _clear
+  printf '\n  %s%s%s  Enter your password to start flashing%s\n\n' \
+    "$BOLD" "$YELLOW" "$ICON_SHIELD" "$RESET"
   sudo -v
   (
     while sleep 45; do
@@ -480,32 +525,19 @@ check_dependencies
 check_artifacts
 
 if (( CHECK_ONLY )); then
-  printf '\n  %s%s✓  Ready to flash %s%s\n\n' "$BOLD" "$GREEN" "$KEYBOARD" "$RESET"
-  ui_row "$CYAN" "$ICON_KEYBOARD" "LEFT"  "${LEFT_FIRMWARE##*/}"
-  ui_row "$MAGENTA" "$ICON_KEYBOARD" "RIGHT" "${RIGHT_FIRMWARE##*/}"
-  (( FULL_RESET )) && ui_row "$YELLOW" "$ICON_RESET" "RESET" "${RESET_FIRMWARE##*/}"
-  printf '\n'
+  printf '\n  %s%s✓  Firmware ready%s\n\n' "$BOLD" "$GREEN" "$RESET"
   exit 0
 fi
 
 if (( FULL_RESET )); then
-  TOTAL_STAGES=5
+  TOTAL_STAGES=4
 else
-  TOTAL_STAGES=3
+  TOTAL_STAGES=2
 fi
 
+flash_banner
 if (( FULL_RESET )); then
-  flash_banner "Full reset · Bluetooth and split bonds will be erased"
-else
-  flash_banner "Normal update · Bluetooth pairing is preserved"
-fi
-
-stage "$ICON_USB  Prepare"
-usb_step "Unplug both halves."
-power_step "Leave both battery switches ON."
-flash_step "Firmware files checked and ready."
-flash_pause "$ICON_USB" "Press Enter when both halves are unplugged"
-if (( FULL_RESET )); then
+  _clear
   printf '\n'
   warn "This reset erases Bluetooth and split bonds on both halves."
   confirm "Continue with the full reset?" || fail "Cancelled before changing either half."
@@ -541,18 +573,18 @@ if (( FULL_RESET )); then
   flash_pause "$ICON_RESET" "Press Enter when the bootloader reappears"
   flash_uf2 "$RIGHT_FIRMWARE" "$RIGHT_SERIAL" "${KEYBOARD}_right.uf2" ""
 else
-  stage "$ICON_KEYBOARD  LEFT half"
-  usb_step "Connect only the LEFT half."
-  reset_step "Double-tap the physical RESET button."
-  flash_pause "$ICON_RESET" "Press Enter after double-tapping RESET"
+  stage "$ICON_KEYBOARD  LEFT"
+  usb_step "Connect the LEFT half."
+  reset_step "Double-tap RESET."
+  flash_pause "$ICON_RESET" "Press Enter when done"
   wait_for_bootloader
   LEFT_SERIAL="$FOUND_SERIAL"
   flash_uf2 "$LEFT_FIRMWARE" "$LEFT_SERIAL" "${KEYBOARD}_left_central.uf2" ""
 
-  stage "$ICON_KEYBOARD  RIGHT half"
-  usb_step "Unplug LEFT, then connect only the RIGHT half."
-  reset_step "Double-tap the physical RESET button."
-  flash_pause "$ICON_RESET" "Press Enter when the bootloader appears"
+  stage "$ICON_KEYBOARD  RIGHT"
+  usb_step "Unplug LEFT, then connect RIGHT."
+  reset_step "Double-tap RESET."
+  flash_pause "$ICON_RESET" "Press Enter when done"
   wait_for_bootloader "" "$LEFT_SERIAL"
   RIGHT_SERIAL="$FOUND_SERIAL"
   flash_uf2 "$RIGHT_FIRMWARE" "$RIGHT_SERIAL" "${KEYBOARD}_right.uf2" ""
@@ -562,7 +594,5 @@ flash_finish
 if (( FULL_RESET )); then
   power_step "Power-cycle both halves to create a fresh split bond."
   usb_step "Reconnect LEFT, then pair ‘Sweep’ again in Bluetooth settings."
-else
-  power_step "If the halves do not rejoin, power-cycle both once."
 fi
 printf '\n'
