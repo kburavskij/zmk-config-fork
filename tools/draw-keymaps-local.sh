@@ -51,3 +51,6 @@ build_draw_image_if_missing
 echo "Done. Generated files are in tools/keymap-drawer"
 echo "- tools/keymap-drawer/${keyboard}.yaml"
 echo "- tools/keymap-drawer/${keyboard}.svg"
+if [[ -f "${REPO_ROOT}/tools/keymap-drawer/${keyboard}-hyprland.svg" ]]; then
+	echo "- tools/keymap-drawer/${keyboard}-hyprland.svg"
+fi

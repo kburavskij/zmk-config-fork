@@ -1,0 +1,291 @@
+# Ferris/Sweep cheat sheet for the optional Sweep Hyprland keybind profile.
+# Pink thumb keys are held; the labeled letter/key is tapped.
+layout: {zmk_keyboard: cradio}
+layers:
+  "WORKSPACES":
+    - WS 1
+    - WS 2
+    - WS 3
+    - WS 4
+    - WS 5
+    - WS 6
+    - WS 7
+    - WS 8
+    - WS 9
+    - WS 10
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - ''
+    - ''
+
+  "MOVE TO WORKSPACE":
+    - Move 1
+    - Move 2
+    - Move 3
+    - Move 4
+    - Move 5
+    - Move 6
+    - Move 7
+    - Move 8
+    - Move 9
+    - Move 10
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - {t: Shift, type: held}
+    - ''
+
+  "FOCUS WINDOW":
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Focus Left
+    - Focus Down
+    - Focus Up
+    - Focus Right
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - ''
+    - ''
+
+  "RESIZE WINDOW":
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Resize Left
+    - Resize Down
+    - Resize Up
+    - Resize Right
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - {t: Shift, type: held}
+    - ''
+
+  "MOVE WINDOW":
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Move Left
+    - Move Down
+    - Move Up
+    - Move Right
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - ''
+    - ''
+
+  "MOVE WORKSPACE TO MONITOR":
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Monitor Left
+    - Monitor Down
+    - Monitor Up
+    - Monitor Right
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - ''
+    - ''
+
+  "HARDWARE SWITCH":
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Laptop
+    - Desktop
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Super, type: held}
+    - {t: Shift, type: held}
+    - ''
+
+  "APPS AND SESSION":
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - Overview
+    - Window Picker
+    - Files
+    - Fullscreen
+    - Close Window
+    - ''
+    - ''
+    - ''
+    - ''
+    - Float
+    - ''
+    - ''
+    - ''
+    - ''
+    - Browser
+    - ''
+    - ''
+    - ''
+    - ''
+    - Special WS
+    - App Launcher
+    - {t: Super, type: held}
+    - Terminal
+    - ''

@@ -31,3 +31,9 @@ keyboard="$(basename "${KEYMAP_PATH}" .keymap)"
 echo "==> Drawing ${keyboard}"
 keymap -c "/zmk-config/tools/keymap-drawer/config.yaml" parse -z "/zmk-config/${KEYMAP_PATH}" >"/zmk-config/tools/keymap-drawer/${keyboard}.yaml"
 keymap -c "/zmk-config/tools/keymap-drawer/config.yaml" draw "/zmk-config/tools/keymap-drawer/${keyboard}.yaml" >"/zmk-config/tools/keymap-drawer/${keyboard}.svg"
+
+hyprland_map="/zmk-config/tools/keymap-drawer/${keyboard}-hyprland.yaml"
+if [[ -f "${hyprland_map}" ]]; then
+    echo "==> Drawing ${keyboard} Hyprland cheat sheet"
+    keymap -c "/zmk-config/tools/keymap-drawer/config.yaml" draw "${hyprland_map}" >"/zmk-config/tools/keymap-drawer/${keyboard}-hyprland.svg"
+fi
