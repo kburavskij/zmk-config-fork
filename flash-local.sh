@@ -184,6 +184,58 @@ finish() {
 # Replace the example below. Set TOTAL_STAGES to match the stages you write.
 # ──────────────────────────────────────────────────────────────────────────
 
+# Flash-specific presentation. Keep the shared wizard library above unchanged.
+if [[ -n "$BLUE" ]]; then
+  CYAN=$(tput setaf 6)
+  MAGENTA=$(tput setaf 5)
+else
+  CYAN=""
+  MAGENTA=""
+fi
+
+readonly ICON_KEYBOARD="󰌌"
+readonly ICON_USB="󰕓"
+readonly ICON_RESET="󰑓"
+readonly ICON_POWER="󰐥"
+readonly ICON_FLASH="󰇚"
+readonly ICON_SHIELD="󰒃"
+
+flash_banner() {
+  local mode="$1"
+  _clear
+  printf '\n  %s%s%s  %s firmware%s\n' "$BOLD" "$MAGENTA" "$ICON_KEYBOARD" "$KEYBOARD" "$RESET"
+  printf '  %s%s%s\n\n' "$DIM" "$mode" "$RESET"
+  printf '  %sPrepare%s  →  %sLeft%s  →  %sRight%s\n\n' \
+    "$BLUE" "$RESET" "$CYAN" "$RESET" "$MAGENTA" "$RESET"
+  pause "Press Enter to start"
+}
+
+ui_row() {
+  local color="$1" icon="$2" label="$3" message="$4"
+  printf '  %s%s  %-7s%s %s\n' "$color" "$icon" "$label" "$RESET" "$message"
+}
+
+usb_step()   { ui_row "$CYAN"    "$ICON_USB"   "USB"   "$1"; }
+reset_step() { ui_row "$MAGENTA" "$ICON_RESET" "RESET" "$1"; }
+power_step() { ui_row "$YELLOW"  "$ICON_POWER" "POWER" "$1"; }
+flash_step() { ui_row "$GREEN"   "$ICON_FLASH" "FLASH" "$1"; }
+shield_step(){ ui_row "$YELLOW"  "$ICON_SHIELD" "ADMIN" "$1"; }
+
+flash_pause() {
+  local icon="$1"
+  shift
+  printf '\n'
+  pause "$icon  $*"
+}
+
+flash_finish() {
+  _clear
+  printf '\n  %s%s✓  Firmware updated%s\n\n' "$BOLD" "$GREEN" "$RESET"
+  ui_row "$CYAN" "$ICON_KEYBOARD" "LEFT"  "${KEYBOARD}_left_central installed"
+  ui_row "$MAGENTA" "$ICON_KEYBOARD" "RIGHT" "${KEYBOARD}_right installed"
+  printf '\n'
+}
+
 usage() {
   cat <<'EOF'
 Usage: ./flash-local.sh [--reset] [--check] [keyboard]
@@ -331,15 +383,16 @@ wait_for_bootloader() {
       line="${candidates[0]}"
       FOUND_DEVICE="${line%%|*}"
       FOUND_SERIAL="${line#*|}"
-      printf '\r  %s✓ found%s %s (serial %s)                    \n' \
-        "$GREEN" "$RESET" "$FOUND_DEVICE" "$FOUND_SERIAL"
+      printf '\r  %s%s  USB%s  Bootloader found: %s                    \n' \
+        "$GREEN" "$ICON_USB" "$RESET" "$FOUND_DEVICE"
       return 0
     fi
     if (( ${#candidates[@]} > 1 )); then
       printf '\n' >&2
       fail "More than one matching NICENANO bootloader is connected. Unplug all but the requested half."
     fi
-    printf '\r  waiting for NICENANO bootloader… %3ss ' "$((deadline - SECONDS))"
+    printf '\r  %s%s  USB%s  Waiting for bootloader… %3ss ' \
+      "$CYAN" "$ICON_USB" "$RESET" "$((deadline - SECONDS))"
     sleep 1
   done
   printf '\n' >&2
@@ -367,11 +420,11 @@ wait_for_usb_product() {
       [[ "$actual_serial" == "$serial" ]] || continue
       product="$(<"$usb_node/product")"
       if [[ -z "$expected_product" && "$product" != "nice!nano" ]]; then
-        printf '  %s✓ rebooted as%s %s\n' "$GREEN" "$RESET" "$product"
+        printf '  %s✓  READY%s  %s\n' "$GREEN" "$RESET" "$product"
         return 0
       fi
       if [[ -n "$expected_product" && "$product" == "$expected_product" ]]; then
-        printf '  %s✓ rebooted as%s %s\n' "$GREEN" "$RESET" "$product"
+        printf '  %s✓  READY%s  %s\n' "$GREEN" "$RESET" "$product"
         return 0
       fi
     done
@@ -402,7 +455,7 @@ flash_uf2() {
   mount_options="$(findmnt -rn -S "$device" -o OPTIONS)"
   [[ ",$mount_options," == *,rw,* ]] || fail "$device remained read-only after the forced mount."
 
-  printf '  flashing %s…\n' "${firmware##*/}"
+  flash_step "Installing ${firmware##*/}…"
   sudo cp -- "$firmware" "$ACTIVE_MOUNT/$destination_name"
   sudo sync -f "$ACTIVE_MOUNT" 2>/dev/null || true
 
@@ -413,7 +466,7 @@ flash_uf2() {
 }
 
 start_sudo_keepalive() {
-  say "Administrator access is needed only for the removable UF2 block device."
+  shield_step "Needed only to write the temporary NICENANO USB volume."
   sudo -v
   (
     while sleep 45; do
@@ -427,9 +480,11 @@ check_dependencies
 check_artifacts
 
 if (( CHECK_ONLY )); then
-  printf 'Ready: dependencies and firmware artifacts are present.\n'
-  printf '  %s\n  %s\n' "$LEFT_FIRMWARE" "$RIGHT_FIRMWARE"
-  (( FULL_RESET )) && printf '  %s\n' "$RESET_FIRMWARE"
+  printf '\n  %s%s✓  Ready to flash %s%s\n\n' "$BOLD" "$GREEN" "$KEYBOARD" "$RESET"
+  ui_row "$CYAN" "$ICON_KEYBOARD" "LEFT"  "${LEFT_FIRMWARE##*/}"
+  ui_row "$MAGENTA" "$ICON_KEYBOARD" "RIGHT" "${RIGHT_FIRMWARE##*/}"
+  (( FULL_RESET )) && ui_row "$YELLOW" "$ICON_RESET" "RESET" "${RESET_FIRMWARE##*/}"
+  printf '\n'
   exit 0
 fi
 
@@ -439,68 +494,75 @@ else
   TOTAL_STAGES=3
 fi
 
-banner "Guided ${KEYBOARD} firmware flash"
-
-stage "Preflight"
-say "Firmware is resolved relative to this script, not the current directory:"
-note "left:  $LEFT_FIRMWARE"
-note "right: $RIGHT_FIRMWARE"
-(( FULL_RESET )) && note "reset: $RESET_FIRMWARE"
-step "Unplug both keyboard halves from USB. Keep their battery switches on."
-pause "Press Enter when no NICENANO bootloader volume is connected."
 if (( FULL_RESET )); then
-  warn "Recovery mode erases Bluetooth and split bonds on both halves."
-  confirm "Continue with the full settings reset?" || fail "Cancelled before changing either half."
+  flash_banner "Full reset · Bluetooth and split bonds will be erased"
+else
+  flash_banner "Normal update · Bluetooth pairing is preserved"
+fi
+
+stage "$ICON_USB  Prepare"
+usb_step "Unplug both halves."
+power_step "Leave both battery switches ON."
+flash_step "Firmware files checked and ready."
+flash_pause "$ICON_USB" "Press Enter when both halves are unplugged"
+if (( FULL_RESET )); then
+  printf '\n'
+  warn "This reset erases Bluetooth and split bonds on both halves."
+  confirm "Continue with the full reset?" || fail "Cancelled before changing either half."
 fi
 start_sudo_keepalive
 
 if (( FULL_RESET )); then
-  stage "Reset left half"
-  step "Connect the LEFT half with a USB data cable."
-  step "Double-tap its physical reset button to enter the NICENANO bootloader."
-  pause "Press Enter after double-tapping reset."
+  stage "$ICON_RESET  Reset LEFT"
+  usb_step "Connect only the LEFT half."
+  reset_step "Double-tap the physical RESET button."
+  flash_pause "$ICON_RESET" "Press Enter after double-tapping RESET"
   wait_for_bootloader
   LEFT_SERIAL="$FOUND_SERIAL"
   flash_uf2 "$RESET_FIRMWARE" "$LEFT_SERIAL" settings_reset.uf2 "SETTINGS RESET"
 
-  stage "Flash left central"
-  step "Leave the LEFT half connected and double-tap reset again."
-  pause "Press Enter when its NICENANO bootloader reappears."
+  stage "$ICON_FLASH  Flash LEFT"
+  usb_step "Keep the LEFT half connected."
+  reset_step "Double-tap RESET again."
+  flash_pause "$ICON_RESET" "Press Enter when the bootloader reappears"
   flash_uf2 "$LEFT_FIRMWARE" "$LEFT_SERIAL" "${KEYBOARD}_left_central.uf2" ""
 
-  stage "Reset right half"
-  step "Unplug the LEFT half, connect the RIGHT half, and double-tap its reset button."
-  pause "Press Enter when the right NICENANO bootloader appears."
+  stage "$ICON_RESET  Reset RIGHT"
+  usb_step "Unplug LEFT, then connect only the RIGHT half."
+  reset_step "Double-tap the physical RESET button."
+  flash_pause "$ICON_RESET" "Press Enter when the bootloader appears"
   wait_for_bootloader "" "$LEFT_SERIAL"
   RIGHT_SERIAL="$FOUND_SERIAL"
   flash_uf2 "$RESET_FIRMWARE" "$RIGHT_SERIAL" settings_reset.uf2 "SETTINGS RESET"
 
-  stage "Flash right peripheral"
-  step "Leave the RIGHT half connected and double-tap reset again."
-  pause "Press Enter when its NICENANO bootloader reappears."
+  stage "$ICON_FLASH  Flash RIGHT"
+  usb_step "Keep the RIGHT half connected."
+  reset_step "Double-tap RESET again."
+  flash_pause "$ICON_RESET" "Press Enter when the bootloader reappears"
   flash_uf2 "$RIGHT_FIRMWARE" "$RIGHT_SERIAL" "${KEYBOARD}_right.uf2" ""
 else
-  stage "Flash left central"
-  step "Connect the LEFT half with a USB data cable."
-  step "Double-tap its physical reset button to enter the NICENANO bootloader."
-  pause "Press Enter after double-tapping reset."
+  stage "$ICON_KEYBOARD  LEFT half"
+  usb_step "Connect only the LEFT half."
+  reset_step "Double-tap the physical RESET button."
+  flash_pause "$ICON_RESET" "Press Enter after double-tapping RESET"
   wait_for_bootloader
   LEFT_SERIAL="$FOUND_SERIAL"
   flash_uf2 "$LEFT_FIRMWARE" "$LEFT_SERIAL" "${KEYBOARD}_left_central.uf2" ""
 
-  stage "Flash right peripheral"
-  step "Unplug the LEFT half, connect the RIGHT half, and double-tap its reset button."
-  pause "Press Enter when the right NICENANO bootloader appears."
+  stage "$ICON_KEYBOARD  RIGHT half"
+  usb_step "Unplug LEFT, then connect only the RIGHT half."
+  reset_step "Double-tap the physical RESET button."
+  flash_pause "$ICON_RESET" "Press Enter when the bootloader appears"
   wait_for_bootloader "" "$LEFT_SERIAL"
   RIGHT_SERIAL="$FOUND_SERIAL"
   flash_uf2 "$RIGHT_FIRMWARE" "$RIGHT_SERIAL" "${KEYBOARD}_right.uf2" ""
 fi
 
-finish
-say "Both halves now run the local $KEYBOARD build."
+flash_finish
 if (( FULL_RESET )); then
-  step "Unplug USB and power-cycle both halves so they create a fresh split bond."
-  step "Reconnect the left half, then remove and pair 'Sweep' again in your OS Bluetooth settings."
+  power_step "Power-cycle both halves to create a fresh split bond."
+  usb_step "Reconnect LEFT, then pair ‘Sweep’ again in Bluetooth settings."
 else
-  step "Reconnect or power-cycle the halves if they do not rejoin immediately."
+  power_step "If the halves do not rejoin, power-cycle both once."
 fi
+printf '\n'
