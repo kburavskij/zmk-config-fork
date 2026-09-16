@@ -110,7 +110,9 @@ Use local Docker when iterating on one board.
 
 - `make build KEYBOARD=<sweep|urchin|forager>` builds a single board in dongleless mode
 - `make build KEYBOARD=<sweep|urchin|forager> DONGLE=1` builds the dongle profile set
-- `make draw KEYBOARD=<sweep|urchin|forager>` regenerates the keymap drawing
+- `make build KEYBOARD=settings-reset` builds the nice!nano settings-reset UF2
+- `make draw KEYBOARD=<sweep|urchin|forager>` regenerates the keymap drawing;
+  the Sweep target also regenerates its Hyprland shortcut cheat sheet
 - Docker must be running first
 
 ```sh
@@ -133,10 +135,42 @@ Build notes:
 - Keymap-drawer outputs are written to `tools/keymap-drawer/`.
 - The first keymap draw builds a pinned local Docker image for keymap-drawer.
 
+## Guided Local Flashing
+
+After a local dongleless build, run the repository-local wizard. It finds the
+`NICENANO` bootloader dynamically, verifies each half by USB serial number,
+works around Linux mounting the UF2 volume read-only, and copies artifacts from
+`build/local/` regardless of your current working directory.
+
+```sh
+# Normal firmware update; preserves Bluetooth and split bonds
+./flash-local.sh
+
+# Full recovery; erases and recreates Bluetooth and split bonds
+make build KEYBOARD=settings-reset
+./flash-local.sh --reset
+```
+
+The default keyboard is `sweep`. Pass another artifact prefix when needed, for
+example `./flash-local.sh urchin`. Run `./flash-local.sh --check` for a
+non-destructive dependency and artifact check.
+
 ## Layer Map
 
 <p align="center">
 <img src="./tools/keymap-drawer/cradio.svg" alt="Shared 34-key layout preview" width="1024">
+</p>
+
+## Hyprland Shortcut Map
+
+This second Sweep/Ferris diagram translates the physical keys into the actions
+configured by the current Hyprland setup. It is documentation only and does not
+change the firmware. Pink keys are the physical thumb keys held for each action:
+the left inner thumb is Super/Tab and the right inner thumb is Shift/Enter. The
+diagram matches the optional Sweep profile toggled from Waybar.
+
+<p align="center">
+<img src="./tools/keymap-drawer/cradio-hyprland.svg" alt="Ferris Hyprland shortcut cheat sheet" width="1024">
 </p>
 
 ## Credits
