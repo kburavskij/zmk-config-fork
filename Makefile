@@ -9,6 +9,7 @@ help:
 	@echo "Targets:"
 	@echo "  make build KEYBOARD=urchin           Build right/left_central"
 	@echo "  make build KEYBOARD=urchin DONGLE=1  Build left_peripheral/right/dongle"
+	@echo "  make build KEYBOARD=settings-reset   Build nice!nano settings reset firmware"
 	@echo "  make draw KEYBOARD=sweep             Draw one keymap (Sweep alias)"
 	@echo "  make draw KEYBOARD=urchin            Draw one keymap"
 

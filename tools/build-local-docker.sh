@@ -49,7 +49,10 @@ ensure_docker
 	"${IMAGE}" \
 	/bin/bash "${CONTAINER_SCRIPT}" "${keyboard}" "${use_dongle}"
 
-if [[ "${use_dongle}" == "1" ]]; then
+if [[ "${keyboard}" == "settings-reset" ]]; then
+	echo "Done. Reset firmware is in ${OUT_DIR}"
+	echo "- build/local/settings_reset.uf2"
+elif [[ "${use_dongle}" == "1" ]]; then
 	echo "Done. Artifacts are in ${OUT_DIR}"
 	echo "- build/local/${keyboard}_left_peripheral.uf2"
 	echo "- build/local/${keyboard}_right.uf2"

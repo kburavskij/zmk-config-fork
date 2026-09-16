@@ -28,7 +28,9 @@ fi
 west update
 
 right_artifact="${keyboard}_right"
-if [[ "${use_dongle}" == "1" ]]; then
+if [[ "${keyboard}" == "settings-reset" ]]; then
+    target_artifacts=(settings_reset)
+elif [[ "${use_dongle}" == "1" ]]; then
     target_artifacts=(
         "${keyboard}_left_peripheral"
         "${right_artifact}"
