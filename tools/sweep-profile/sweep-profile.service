@@ -1,0 +1,13 @@
+[Unit]
+Description=Sweep Bluetooth keybind profile watcher
+PartOf=graphical-session.target
+After=graphical-session-pre.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/hypr/UserScripts/SweepProfile.sh watch
+Restart=on-failure
+RestartSec=2s
+
+[Install]
+WantedBy=graphical-session.target
