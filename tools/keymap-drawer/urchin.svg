@@ -475,8 +475,8 @@ use.phosphor\:regular\/control {
 <text x="180" y="99" class="combo tap">Delete</text>
 </g>
 <g class="combo combopos-1">
-<rect rx="6" ry="6" x="106" y="145" width="28" height="28" class="combo"/>
-<text x="120" y="159" class="combo tap">Copy</text>
+<rect rx="6" ry="6" x="106" y="146" width="28" height="28" class="combo"/>
+<text x="120" y="160" class="combo tap">Copy</text>
 </g>
 <g class="combo combopos-2">
 <rect rx="6" ry="6" x="166" y="145" width="28" height="28" class="combo"/>
@@ -511,8 +511,8 @@ use.phosphor\:regular\/control {
 </text>
 </g>
 <g class="combo combopos-7">
-<path d="M150,168 l-40,0" class="combo"/>
-<path d="M150,168 l40,0" class="combo"/>
+<path d="M150,168 l-40,1" class="combo"/>
+<path d="M150,168 l40,-1" class="combo"/>
 <rect rx="6" ry="6" x="136" y="154" width="28" height="28" class="combo"/>
 <text x="150" y="168" class="combo tap">Cut</text>
 </g>
@@ -523,8 +523,8 @@ use.phosphor\:regular\/control {
 </text>
 </g>
 <g class="combo combopos-9">
-<path d="M570,162 l-40,4" class="combo"/>
-<path d="M570,162 l40,4" class="combo"/>
+<path d="M570,162 l-40,3" class="combo"/>
+<path d="M570,162 l40,5" class="combo"/>
 <rect rx="6" ry="6" x="556" y="148" width="28" height="28" class="combo"/>
 <text x="570" y="162" class="combo tap">
 <tspan x="570" dy="-0.6em">Scroll</tspan><tspan x="570" dy="1.2em">↓</tspan>
@@ -1185,8 +1185,8 @@ use.phosphor\:regular\/control {
 </text>
 </g>
 <g class="combo combopos-1">
-<path d="M570,162 l-40,4" class="combo"/>
-<path d="M570,162 l40,4" class="combo"/>
+<path d="M570,162 l-40,3" class="combo"/>
+<path d="M570,162 l40,5" class="combo"/>
 <rect rx="6" ry="6" x="556" y="148" width="28" height="28" class="combo"/>
 <text x="570" y="162" class="combo tap">
 <tspan x="570" dy="-0.6em">Scroll</tspan><tspan x="570" dy="1.2em">↓</tspan>
