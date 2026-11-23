@@ -31,46 +31,11 @@ layers:
   - ','
   - .
   - /
-  - {t: '$$mdi:keyboard-space$$', h: SYM}
+  - {t: '$$mdi:keyboard-space$$', h: NAV}
   - {t: Tab, h: '$$phosphor:regular/command$$'}
   - {t: Enter, h: '$$phosphor:regular/arrow-fat-up$$'}
-  - {t: Backspace, h: NAV}
+  - {t: Backspace, h: SYM}
   SYM:
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - {t: '=', h: '$$phosphor:regular/control$$'}
-  - {t: _, h: '$$phosphor:regular/option$$'}
-  - {t: '{', h: '$$phosphor:regular/command$$'}
-  - {t: '[', h: '$$phosphor:regular/arrow-fat-up$$'}
-  - /
-  - \
-  - {t: ']', h: '$$phosphor:regular/arrow-fat-up$$'}
-  - {t: '}', h: '$$phosphor:regular/command$$'}
-  - {t: '-', h: '$$phosphor:regular/option$$'}
-  - {t: ':', h: '$$phosphor:regular/control$$'}
-  - '~'
-  - '|'
-  - '`'
-  - ''''
-  - '-'
-  - +
-  - '"'
-  - <
-  - '>'
-  - '?'
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  NAV:
   - '1'
   - '2'
   - '3'
@@ -81,30 +46,65 @@ layers:
   - '8'
   - '9'
   - '0'
-  - {t: Print Screen, h: '$$phosphor:regular/control$$'}
-  - {t: ▽, type: trans}
-  - {t: '$$mdi:skip-backward$$', h: '$$phosphor:regular/command$$'}
-  - {t: '$$mdi:play-pause$$', h: '$$phosphor:regular/arrow-fat-up$$'}
-  - $$mdi:skip-forward$$
-  - ←
-  - {t: ↓, h: '$$phosphor:regular/arrow-fat-up$$'}
-  - {t: ↑, h: '$$phosphor:regular/command$$'}
-  - {t: →, h: '$$phosphor:regular/option$$'}
-  - {t: '$$mdi:volume-high$$', h: '$$phosphor:regular/control$$'}
-  - $$mdi:volume-off$$
-  - {t: ▽, type: trans}
-  - Menu
-  - Page Up
-  - Home
-  - End
-  - Page Down
-  - ','
-  - .
-  - $$mdi:volume-medium$$
+  - {t: '=', h: '$$phosphor:regular/control$$'}
+  - {t: _, h: '$$phosphor:regular/option$$'}
+  - {t: '{', h: '$$phosphor:regular/command$$'}
+  - {t: '[', h: '$$phosphor:regular/arrow-fat-up$$'}
+  - '-'
+  - +
+  - {t: ']', h: '$$phosphor:regular/arrow-fat-up$$'}
+  - {t: '}', h: '$$phosphor:regular/command$$'}
+  - {t: \, h: '$$phosphor:regular/option$$'}
+  - {t: ':', h: '$$phosphor:regular/control$$'}
+  - '~'
+  - '|'
+  - '`'
+  - ''''
+  - /
+  - '"'
+  - <
+  - '>'
+  - '?'
+  - '@'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  NAV:
+  - Esc
+  - Print Screen
+  - Find
+  - Page Up
+  - Page Down
+  - StartLn
+  - Prev Word
+  - Del Word
+  - Next Word
+  - EndLn
+  - $$phosphor:regular/control$$
+  - $$phosphor:regular/option$$
+  - $$phosphor:regular/command$$
+  - $$phosphor:regular/arrow-fat-up$$
+  - Delete
+  - ←
+  - ↓
+  - ↑
+  - →
+  - $$mdi:volume-high$$
+  - $$mdi:volume-off$$
+  - $$mdi:skip-backward$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-forward$$
+  - Menu
+  - Last Window
+  - Toggle Terminal
+  - New Terminal
+  - {t: ▽, type: trans}
+  - $$mdi:volume-medium$$
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   FNC:
   - F1
   - F2
@@ -122,9 +122,9 @@ layers:
   - $$phosphor:regular/arrow-fat-up$$
   - F11
   - F12
-  - $$phosphor:regular/arrow-fat-up$$
-  - $$phosphor:regular/command$$
-  - $$phosphor:regular/option$$
+  - $$mdi:penguin$$
+  - $$mdi:apple$$
+  - Windows
   - $$phosphor:regular/control$$
   - BT 1
   - BT 2
@@ -183,12 +183,6 @@ combos:
 - p: [11, 12]
   k: Save
   l: [BASE]
-- p: [13, 12]
-  k: Find
-  l: [BASE]
 - p: [2, 1]
   k: Tab
-  l: [BASE]
-- p: [23, 22]
-  k: '`'
   l: [BASE]

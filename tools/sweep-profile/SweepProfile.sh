@@ -6,6 +6,7 @@ readonly config_home="${SWEEP_PROFILE_CONFIG_HOME:-${XDG_CONFIG_HOME:-$HOME/.con
 readonly state_home="${SWEEP_PROFILE_STATE_HOME:-${XDG_STATE_HOME:-$HOME/.local/state}/hyprdots}"
 readonly runtime_home="${SWEEP_PROFILE_RUNTIME_HOME:-${XDG_RUNTIME_DIR:-/tmp}/hyprdots-$UID}"
 readonly active_config="$config_home/hypr/UserConfigs/ActiveKeybindProfile.conf"
+readonly active_lua="$config_home/hypr/UserConfigs/ActiveKeybindProfile.lua"
 readonly default_profile='$HOME/.config/hypr/UserConfigs/KeybindProfiles/Default.conf'
 readonly sweep_profile='$HOME/.config/hypr/UserConfigs/KeybindProfiles/Sweep.conf'
 readonly preference_file="$state_home/sweep-profile-enabled"
@@ -46,7 +47,7 @@ notify() {
 }
 
 apply_profile() {
-    local connected=0 requested=0 active=0 profile label temporary desired current=""
+    local connected=0 requested=0 active=0 profile label temporary desired desired_lua current="" current_lua="" changed=0
     sweep_connected && connected=1
     preference_enabled && requested=1
     (( connected && requested )) && active=1
@@ -60,11 +61,24 @@ apply_profile() {
     fi
 
     printf -v desired '# Managed by SweepProfile.sh.\nsource = %s' "$profile"
+    printf -v desired_lua 'return "%s"' "$label"
     [[ -r "$active_config" ]] && current="$(<"$active_config")"
     if [[ "$current" != "$desired" ]]; then
         temporary="$(mktemp "$(dirname -- "$active_config")/.ActiveKeybindProfile.XXXXXX")"
         printf '%b\n' "$desired" >"$temporary"
         mv -f -- "$temporary" "$active_config"
+        changed=1
+    fi
+
+    [[ -r "$active_lua" ]] && current_lua="$(<"$active_lua")"
+    if [[ "$current_lua" != "$desired_lua" ]]; then
+        temporary="$(mktemp "$(dirname -- "$active_lua")/.ActiveKeybindProfileLua.XXXXXX")"
+        printf '%s\n' "$desired_lua" >"$temporary"
+        mv -f -- "$temporary" "$active_lua"
+        changed=1
+    fi
+
+    if (( changed )); then
         if [[ "${SWEEP_PROFILE_NO_RELOAD:-0}" != 1 ]]; then
             hyprctl reload >/dev/null 2>&1 || true
         fi
@@ -127,6 +141,13 @@ sync_watched_state() {
     local current
     apply_profile
     current="$CONNECTED:$ACTIVE"
+    # The first state is already read by Waybar when its custom module starts.
+    # Do not send the realtime refresh signal during login: if it arrives before
+    # Waybar installs its handler, the signal's default action terminates it.
+    if [[ -z "$watch_state" ]]; then
+        watch_state="$current"
+        return
+    fi
     if [[ "$current" != "$watch_state" ]]; then
         signal_waybar
         watch_state="$current"

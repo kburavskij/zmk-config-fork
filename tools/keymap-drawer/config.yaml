@@ -198,6 +198,7 @@ parse_config:
     '&case_kebab': Kebab
     '&os_sel OS_MAC': $$mdi:apple$$
     '&os_sel OS_LIN': $$mdi:penguin$$
+    '&os_sel OS_WIN': Windows
     '&hml_outer 0 A': {t: A, h: '$$phosphor:regular/control$$'}
     '&hml_inner 0 D': {t: D, h: '$$phosphor:regular/command$$'}
     '&hmr_inner 0 K': {t: K, h: '$$phosphor:regular/command$$'}
@@ -237,6 +238,9 @@ parse_config:
     '&ok_redo': Redo
     '&ok_select_all': Select All
     '&ok_save': Save
+    '&previous_window': Last Window
+    '&drop_terminal': Toggle Terminal
+    '&new_terminal': New Terminal
     '&main_macro': Primary Password
     '&email_macro': Email
     '&pass1_macro': Password 1
